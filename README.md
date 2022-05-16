@@ -14,8 +14,14 @@ Odpowiedzi nie muszą być bardzo rozbudowane, ale fajnie jakby wszystko było w
 Do zatwierdzenia PR potrzebne są dwie zgody od różnych osób, więc ktoś będzie musiał sprawdzić czy to co ma być dodane ma sens. 
 
 ### Instlacja texa i środowiska
-https://miktex.org/download
+- Windows
 
-https://www.texstudio.org/
+  https://miktex.org/download
+
+  https://www.texstudio.org/
+ 
+ - Linux
+ 
+   Dacie sobie rade
 
 PZDR
