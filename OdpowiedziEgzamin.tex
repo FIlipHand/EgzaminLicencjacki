@@ -211,6 +211,142 @@ Szczególną podgrupą funkcji skrótu są funkcje uznawane za bezpieczne do zas
 
 Przykładowe funkcje skrótu to SHA-1 (SHA128), SHA-2 (SHA256), SHA-3(SHA512), MD5.
 
+\setcounter{subsection}{5}
+\subsection{Sposoby cyfrowej reprezentacji liczby całkowitej i rzeczywistej.}
+
+\subsubsection{Liczby całkowite}
+
+\subparagraph{Kod \text{ZM} (kod znak-moduł)}
+
+Sprawa w kodzie ZM jest w miarę prosta i klarowna. Najstarszy bit $b_{n-1}$ dla n-bitowej liczby jest bitem znaku i określa czy liczba jest dodatnia czy ujemna:
+\begin{itemize}
+	\item 0 - liczba dodatnia,
+	\item 1 - liczba ujemna.
+\end{itemize}
+
+Bity od $b_{n-1}$ do $b_0$ odpowiadają za kodowanie wartości samej liczby. Wzór na obliczenie wartości liczby zakodowanej w \textbf{ZM}:
+\begin{center}
+	$L_{ZM} = (-1)^{b_{n-1}} \cdot (b_{n-2}2^{n-2} + ... + b_22^2 + b_12^1 + b_02^0)$
+\end{center}
+
+Przykładowe kodowanie liczby na ośmiu bitach w kodzie \textbf{ZM}:
+\begin{center}
+	$26 \longrightarrow \textbf{0}0011010 $\\
+	$-26 \longrightarrow \textbf{1}0011010 $
+\end{center}
+
+Proste, logiczne, fajne. Pytania, problemy? To jedziemy dalej.
+
+	
+\subparagraph{Kod \textbf{U2} (kod uzupełnień do 2)}
+
+Tutaj sprawa się nieco komplikuje z zapisem liczb ujemnych. Bit $b_{n-1}$ ma wagę $-2^{n-1}$ co sprawia, że musimy bitowo tak jakby zapisać odwrotność liczby, którą chcemy reprezentować jako ujemna (i dodać 1, żeby się wszystko zgadzało). W zapisie liczb dodatnich zapis jest identyczny jak w \textbf{ZM} - na najstarszym bicie musimy tylko zachować $0$.
+
+Istnieje prosty algorytm konwersji na U2 z wykorzystaniem ZM:
+\begin{enumerate}
+	\item Zapisać moduł liczby w ZM,
+	\item Dokonać inwersji bitów (0 na 1 i 1 na 0),
+	\item Zwiększ wynik dodając 1.
+\end{enumerate}
+
+Przykład z liczbą -27 na 8 bitach:
+
+\begin{tikzpicture}[x=2.2cm,y=1.4cm]
+	\node[text width=5cm] at (0, 0)   (a) {Zapisujemy liczbę 27 w ZM};
+	\node[text width=3cm] at (0.5, 1)   (b) {$00011011$};
+	\draw [-to] (0,0.2) -- (0.2,0.7);
+	\node[text width=3cm] at (2, 1)   (b) {$11100100$};
+	\node[text width=3cm] at (3.5, 1)   (b) {$\textbf{11100101}$};
+	
+	\draw [-to] (0.7,1) -- (1.2,1);
+	\draw [-to] (2.2,1) -- (2.7,1);
+	
+	\node[text width=5cm] at (2, 2)   (a) {Odwracamy bity};
+	\draw [-to] (1.7,1.8) -- (1.7,1.2);
+	
+	\node[text width=5cm] at (3.9, 0)   (a) {Dodajemy 1};
+	\draw [-to] (3.2,0.2) -- (3.2,0.7);
+\end{tikzpicture}
+
+\subsubsection{Liczby rzeczywiste}
+
+\subparagraph{Zapis stałopozycyjny}
+
+Do zapisu liczby stałoprzecinkowej przeznaczona jest z góry określona liczba bitów, a pozycję przecinka ustala się
+arbitralnie, w zależności od wymaganej dokładności, wolne bity uzupełniając zerami. Do reprezentacji liczb ze
+znakiem stosuje także kod U2.
+
+Liczba $6,25=110,01_{(2)}$ zapisana na 8 bitach gdy częśd ułamkowa zajmuje 3 najmłodsze bity, ma postać:
+\begin{center}
+	\begin{tikzpicture}[x=2.2cm,y=1.4cm]	
+		\node[text width=3cm] at (0, 0)   (b) {$\underbrace{00110}_{\text{część całkowita}}$};
+		\node[text width=3cm] at (0.39, 0.42)   (b) {$\overbrace{010}^{\text{część ułamkowa}}$};
+	\end{tikzpicture}
+\end{center}
+
+A w reprezentacji U2 będzie miała postać:
+
+\begin{center}
+	$11001110$
+\end{center}
+
+Część całkowita liczby zachowuje się identycznie jak w przypadku zwykłych liczb całkowitych, natomiast bity w części ułamkowej posiadają wagi $2^{-1}$, $2^{-2}$, itd. - czyli $\frac{1}{2}$, $\frac{1}{4}$, ..., więc ilość bitów w części ułamkowej wpływa na precyzję zapisu.
+
+\subparagraph{Zapis zmiennopozycyjny}
+
+Liczba zmiennoprzecinkowa jest komputerową reprezentacją liczb rzeczywistych zapisanych w postaci wykładniczej
+o podstawie 2. Przykładowa notacja:
+
+\begin{center}
+	$(-1)^Z \cdot M \cdot 2^C = (-1)^Z \cdot (1+m) \cdot 2^{c - BIAS}$
+\end{center}
+gdzie:
+\begin{description}
+	\item[$(-1)^Z$] - znak liczby
+	\item[$M=1+m$] - znormalizowana mantysa (liczba spełniająca warunek: $1 \leq M \leq 2$). Ponieważ przed przecinkiem stoi zawsze 1, więc można ją przedstawić w postaci $1+m$, gdzie \emph{m} jest liczbę ułamkową: $0 \leq m \leq 1$)
+	\item[$C=c-BIAS$] - cecha (liczba całkowita), która dzięki zastosowaniu stałej BIAS pozwoli przedstawid cechę w postaci
+	różnicy c-BIAS (c jest liczbą całkowitą dodatnią, tzw spolaryzowana cechę)
+	\item[$BIAS$] - stała (liczba całkowita BIAS zależna od danej implementacji – rozwiązuje problem znaku cechy)
+\end{description}
+Kodujemy wyłącznie:
+\begin{description}
+	\item[z] - bit znaku
+	\item[m] - mantysę pomniejszoną o 1
+	\item[c] - cechę przesuniętą o BIAS
+\end{description}
+
+Załóżmy, że operujemy następującym zmiennopozycyjnym formatem zapisu liczby rzeczywistej:
+\begin{itemize}
+	\item na zapis przeznaczamy 16 bitów
+	\item najstarszy bit ($b_{15}$) to bit znaku (będziemy stosowad kod ZM)
+	\item kolejne 6 bitów ($b_{9}$-$b_{14}$) to mantysa
+	\item pozostałe bity ($b_0$-$b_8$) są przeznaczone na zapis cechy i przyjmijmy, że BIAS=9
+\end{itemize}
+
+Przedstawimy liczbę +0,0224609375 w powyższym formacie. Naszą liczbę zapisujemy w systemie binarnym w
+postaci wykładniczej o podstawie 2, przesuwamy przecinek zapisując ją w notacji wykładniczej:
+
+\begin{center}
+	$0,0224609375 = 0,0000010111_{(2)} = 1,0111_{(2)} \cdot 2^{-6}$
+\end{center}
+
+Z tego wynika, że:
+
+\begin{itemize}
+	\item Znak: $(-1)^0$
+	\item Mantysa: $1.\textbf{\underline{0111}}_2$
+	\item Cecha: $-6 = 3-9 = 11_2 - BIAS$
+\end{itemize}
+
+Oto liczba 0,0224609375 zapisana w zadanym formacie:
+\begin{center}
+	\begin{tikzpicture}[x=2.2cm,y=1.4cm]	
+		\node[text width=3cm] at (0, 0)   (b) {$\underbrace{0}_{\text{bit znaku}}$};
+		\node[text width=3cm] at (0.38, 0.39)   (b) {$\overbrace{011100}^{\text{mantysa}}$};
+		\node[text width=3cm] at (1, 0)   (b) {$\underbrace{000000011}_{\text{cecha}}$};
+	\end{tikzpicture}
+\end{center}
+
 \setcounter{subsection}{32}
 \subsection{Budowa sieci neuronowych.}
 \begin{figure}[h!]
