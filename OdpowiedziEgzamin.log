@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.22)  16 MAY 2022 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.22)  21 JUN 2022 18:55
 entering extended mode
 **./OdpowiedziEgzamin.tex
 (OdpowiedziEgzamin.tex
@@ -783,38 +783,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
-[10] (OdpowiedziEgzamin.aux) ) 
+
+Overfull \hbox (7.8446pt too wide) in paragraph at lines 507--507
+[]\OT4/cmr/bx/n/14.4 Charakterystyka kryp-to-gra-fii sy-me-trycz-nej oraz asy-
+ []
+
+<./images/krypt_sym.png, id=72, 520.94624pt x 241.90375pt>
+File: ./images/krypt_sym.png Graphic file (type png)
+<use ./images/krypt_sym.png>
+Package pdftex.def Info: ./images/krypt_sym.png  used on input line 514.
+(pdftex.def)             Requested size: 234.42365pt x 108.85567pt.
+[10 <./images/krypt_sym.png>]
+<./images/krypt_asym_1.png, id=78, 301.125pt x 160.6pt>
+File: ./images/krypt_asym_1.png Graphic file (type png)
+<use ./images/krypt_asym_1.png>
+Package pdftex.def Info: ./images/krypt_asym_1.png  used on input line 529.
+(pdftex.def)             Requested size: 135.50499pt x 72.26932pt.
+<./images/krypt_asym_2.png, id=79, 301.125pt x 201.75375pt>
+File: ./images/krypt_asym_2.png Graphic file (type png)
+<use ./images/krypt_asym_2.png>
+Package pdftex.def Info: ./images/krypt_asym_2.png  used on input line 534.
+(pdftex.def)             Requested size: 135.50499pt x 90.78835pt.
+ [11 <./images/krypt_asym_1.png> <./images/krypt_asym_2.png>]
+<./images/krypt_asym_podpis.png, id=85, 1027.84pt x 578.16pt>
+File: ./images/krypt_asym_podpis.png Graphic file (type png)
+<use ./images/krypt_asym_podpis.png>
+Package pdftex.def Info: ./images/krypt_asym_podpis.png  used on input line 545
+.
+(pdftex.def)             Requested size: 359.74939pt x 202.35902pt.
+ [12 <./images/krypt_asym_podpis.png>] (OdpowiedziEgzamin.aux) ) 
 Here is how much of TeX's memory you used:
- 14984 strings out of 478927
- 298732 string characters out of 2852534
+ 15017 strings out of 478927
+ 299652 string characters out of 2852534
  636743 words of memory out of 3000000
- 32535 multiletter control sequences out of 15000+600000
+ 32563 multiletter control sequences out of 15000+600000
  415653 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,21n,89p,866b,929s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fon
-ts/enc/dvips/pl/plit.enc}{C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/en
-c/dvips/pl/plrm.enc}{C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
-ps/pl/plms.enc}{C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/pl
-/plmi.enc} <C:\Users\Ganja\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
-600\tcrm1200.pk>{C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/p
-l/plme.enc}<C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/pl/plbx12.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/pl/plex10.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/pl/plmi12.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/pl/plmi6.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/pl/plmi8.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/pl/plr12.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/pl/plr6.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/pl/plr8.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/pl/plsy10.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/pl/plsy6.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/pl/plsy8.pfb><C:/Users/Ganja/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/pl/plti12.pfb>
-Output written on OdpowiedziEgzamin.pdf (10 pages, 163120 bytes).
+{C:/Users/Ganja
+/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/pl/plit.enc}{C:/Users/Ganja/AppD
+ata/Local/Programs/MiKTeX/fonts/enc/dvips/pl/plrm.enc}{C:/Users/Ganja/AppData/L
+ocal/Programs/MiKTeX/fonts/enc/dvips/pl/plms.enc}{C:/Users/Ganja/AppData/Local/
+Programs/MiKTeX/fonts/enc/dvips/pl/plmi.enc} <C:\Users\Ganja\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Users/Ganja/AppData/Local
+/Programs/MiKTeX/fonts/enc/dvips/pl/plme.enc}<C:/Users/Ganja/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Ganja/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/pl/plbx12.pfb><C:/Users/Ganja/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/pl/plex10.pfb><C:/Users/Ganja/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/pl/plmi12.pfb><C:/Users/Ganja/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/pl/plmi6.pfb><C:/Users/Ganja/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/pl/plmi8.pfb><C:/Users/Ganja/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/pl/plr12.pfb><C:/Users/Ganja/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/pl/plr6.pfb><C:/Users/Ganja/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/pl/plr8.pfb><C:/Users/Ganja/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/pl/plsy10.pfb><C:/Users/Ganja/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/pl/plsy6.pfb><C:/Users/Ganja/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/pl/plsy8.pfb><C:/Users/Ganja/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/pl/plti12.pfb>
+Output written on OdpowiedziEgzamin.pdf (12 pages, 264765 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 152 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
