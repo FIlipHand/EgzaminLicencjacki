@@ -49,5 +49,7 @@
             gistID: efabb9bc6b21491d82e48e6eccd373a5
             filename: metacov.json
             label: Coverage
-            message: ${{ env.done }} / ${{ env.all }}
-            color: green
+            message: ${{ env.done }}/${{ env.all }}
+            valColorRange: ${{ env.done }}
+            maxColorRange: ${{ env.all }}
+            minColorRange: 0
