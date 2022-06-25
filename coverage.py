@@ -1,13 +1,12 @@
 import json
-import re
 
 with open('kurwa_juz_git.tex', 'r') as file:
     data = file.read().splitlines()
 
-SECTION_START = '\\section'
-TODO_FLAG = '\\color{red} TODO:'
+QUESTION_START = '\\subsection'
+TODO_FLAG = '\\color{red}'
 
-data = [x for x in data if SECTION_START in x]
+data = [x for x in data if QUESTION_START in x]
 all_questions = len(data)
 
 data = [x for x in data if TODO_FLAG not in x]
@@ -17,6 +16,8 @@ output = {
     "done": done_questions,
     "all": all_questions
 }
+
+print(output)
 
 
 with open('coverage.json', 'w+') as file:
