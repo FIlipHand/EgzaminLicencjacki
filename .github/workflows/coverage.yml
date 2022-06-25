@@ -35,21 +35,21 @@
             python coverage.py
 
         - name: "Compute info for later steps"
-        id: info
-        run: |
-          set -xe
-          export DONE=$(python -c "import json;print(json.load(open('coverage.json'))['done'])")
-          export ALL=$(python -c "import json;print(json.load(open('coverage.json'))['all'])")
-          echo "done=DONE" >> $GITHUB_ENV
-          echo "all=ALL" >> $GITHUB_ENV
+          id: info
+          run: |
+            set -xe
+            export DONE=$(python -c "import json;print(json.load(open('coverage.json'))['done'])")
+            export ALL=$(python -c "import json;print(json.load(open('coverage.json'))['all'])")
+            echo "done=DONE" >> $GITHUB_ENV
+            echo "all=ALL" >> $GITHUB_ENV
 
         - name: "Create badge"
         # https://gist.githubusercontent.com/s-tyda/efabb9bc6b21491d82e48e6eccd373a5
-        uses: schneegans/dynamic-badges-action@v1.4.0
-        with:
-          auth: ${{ secrets.METACOV_GIST_SECRET }}
-          gistID: efabb9bc6b21491d82e48e6eccd373a5
-          filename: metacov.json
-          label: Coverage
-          message: ${{ env.done }}% / ${{ env.all }}%
-          color: green
+          uses: schneegans/dynamic-badges-action@v1.4.0
+          with:
+            auth: ${{ secrets.METACOV_GIST_SECRET }}
+            gistID: efabb9bc6b21491d82e48e6eccd373a5
+            filename: metacov.json
+            label: Coverage
+            message: ${{ env.done }}% / ${{ env.all }}%
+            color: green
