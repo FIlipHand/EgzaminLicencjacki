@@ -1,4 +1,9 @@
 # EgzaminLicencjacki
+
+--------------------
+
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/s-tyda/efabb9bc6b21491d82e48e6eccd373a5/raw/metacov.json)
+
 Odpowiedzi na pytania na egzamin licencjacki. 
 
 Jak kto chce, umie i na czymś się zna to niech dodanie pull requesty.
