@@ -1,6 +1,6 @@
 import json
 
-with open('kurwa_juz_git.tex', 'r') as file:
+with open('Odpowiedzi.tex', 'r') as file:
     data = file.read().splitlines()
 
 QUESTION_START = '\\subsection'
