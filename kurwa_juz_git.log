@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  25 JUN 2022 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  25 JUN 2022 16:27
 entering extended mode
 **./kurwa_juz_git.tex
 (kurwa_juz_git.tex
@@ -653,25 +653,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {C:/Users/Pawel/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Overfull \hbox (2.53766pt too wide) in paragraph at lines 39--39
+Overfull \hbox (2.53766pt too wide) in paragraph at lines 46--46
  [][] [][]\OT4/cmr/m/n/12 TODO: In-ter-fej-sy i kla-sy abs-trak-cyj-ne w pro-gr
 a-mo-wa-niu obiek- 
  []
 
 [2]
-Overfull \hbox (0.28769pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.28769pt too wide) in paragraph at lines 62--62
  [][] [][]\OT4/cmr/m/n/12 TODO: De-fi-ni-cja funk-cji ob-li-czal-nej (cz¦-±cio-
 wo re-ku-ren-cyj-nej). 
  []
 
 
-Overfull \hbox (12.62506pt too wide) in paragraph at lines 61--61
+Overfull \hbox (12.62506pt too wide) in paragraph at lines 68--68
  [][] [][]\OT4/cmr/m/n/12 TODO: De-kla-ra-tyw-ne pro-gra-mo-wa-nie funk-cyj-ne:
  ra-chu-nek lamb- 
  []
 
 
-Overfull \hbox (9.39175pt too wide) in paragraph at lines 65--65
+Overfull \hbox (9.39175pt too wide) in paragraph at lines 72--72
  [][] [][]\OT4/cmr/m/n/12 TODO: Wie-lo-war-stwo-wa or-ga-ni-za-cja sys-te-mów k
 om-pu-te-ro-wych. 
  []
@@ -682,97 +682,254 @@ om-pu-te-ro-wych.
 
  [3]
 Rozdzia\PlPrIeC {\l } I.
+<./images/krypt_sym.png, id=17, 520.94624pt x 241.90375pt>
+File: ./images/krypt_sym.png Graphic file (type png)
+<use ./images/krypt_sym.png>
+Package pdftex.def Info: ./images/krypt_sym.png  used on input line 63.
+(pdftex.def)             Requested size: 234.42365pt x 108.85567pt.
+[4
 
-Overfull \hbox (7.66757pt too wide) in paragraph at lines 76--76
+ <./images/krypt_sym.png>]
+<./images/krypt_asym_1.png, id=23, 301.125pt x 160.6pt>
+File: ./images/krypt_asym_1.png Graphic file (type png)
+<use ./images/krypt_asym_1.png>
+Package pdftex.def Info: ./images/krypt_asym_1.png  used on input line 78.
+(pdftex.def)             Requested size: 135.50499pt x 72.26932pt.
+<./images/krypt_asym_2.png, id=24, 301.125pt x 201.75375pt>
+File: ./images/krypt_asym_2.png Graphic file (type png)
+<use ./images/krypt_asym_2.png>
+Package pdftex.def Info: ./images/krypt_asym_2.png  used on input line 83.
+(pdftex.def)             Requested size: 135.50499pt x 90.78835pt.
+ [5 <./images/krypt_asym_1.png> <./images/krypt_asym_2.png>]
+<./images/krypt_asym_podpis.png, id=30, 1027.84pt x 578.16pt>
+File: ./images/krypt_asym_podpis.png Graphic file (type png)
+<use ./images/krypt_asym_podpis.png>
+Package pdftex.def Info: ./images/krypt_asym_podpis.png  used on input line 94.
+
+(pdftex.def)             Requested size: 359.74939pt x 202.35902pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+[6 <./images/krypt_asym_podpis.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
+
+ []
+
+
+Overfull \hbox (9.82224pt too wide) in paragraph at lines 109--110
+[]\OT4/cmr/m/n/12 Odporno±¢ na ko-li-zje kon-kret-nych wia-do-mo-±ci (tar-get c
+ollision-resistance,
+ []
+
+
+Overfull \hbox (1.98898pt too wide) in paragraph at lines 109--110
+\OT4/cmr/m/n/12 mo»-li-wo-±ci wy-ge-ne-ro-wa-nia wia-do-mo-±ci o ta-kim sa-mym 
+skró-cie jak wska-
+ []
+
+
+Overfull \hbox (7.66757pt too wide) in paragraph at lines 126--126
 [][]\OT4/cmr/bx/n/17.28 TODO: Po-rów-na-nie mo-de-lu OSI i TCP/IP. 
  []
 
-[4
-
-]
-Overfull \hbox (13.4517pt too wide) in paragraph at lines 96--96
+[7]
+Overfull \hbox (13.4517pt too wide) in paragraph at lines 146--146
 [][]\OT4/cmr/bx/n/17.28 TODO: Me-to-dy ob-sªu-gi wie-lu klien-tów rów-
  []
 
 
-Overfull \hbox (4.07773pt too wide) in paragraph at lines 111--111
+Overfull \hbox (4.07773pt too wide) in paragraph at lines 161--161
 [][]\OT4/cmr/bx/n/17.28 TODO: Atry-bu-ty bez-pie-cze«-stwa in-for-ma-
  []
 
-[5] [6]
+[8] [9]
 Rozdzia\PlPrIeC {\l } II.
-[7
 
-] [8]
+Neural network with arrows 
+ Layer 1, 2, 3, 4, 5, [10
+
+] 
+Neural network activation
+contour: Using real outline for `$w_{1,1}$' on input line 254.
+contour: Using real outline for `$w_{1,2}$' on input line 254.
+contour: Using real outline for `$w_{1,3}$' on input line 254.
+contour: Using real outline for `$w_{1,4}$' on input line 254.
+contour: Using real outline for `$w_{1,n}$' on input line 254.
+[11] [12] [13]
 Rozdzia\PlPrIeC {\l } III.
 
-Overfull \hbox (21.96974pt too wide) in paragraph at lines 203--203
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
+[14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+<./images/Matrix_multiplication_diagram_2.pdf, id=68, 250.9375pt x 220.825pt>
+File: ./images/Matrix_multiplication_diagram_2.pdf Graphic file (type pdf)
+<use ./images/Matrix_multiplication_diagram_2.pdf>
+Package pdftex.def Info: ./images/Matrix_multiplication_diagram_2.pdf  used on 
+input line 453.
+(pdftex.def)             Requested size: 200.75026pt x 176.66022pt.
+[15 <./images/Matrix_multiplication_diagram_2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+<./images/Wektor_by_Zureks.pdf, id=80, 225.84375pt x 225.84375pt>
+File: ./images/Wektor_by_Zureks.pdf Graphic file (type pdf)
+<use ./images/Wektor_by_Zureks.pdf>
+Package pdftex.def Info: ./images/Wektor_by_Zureks.pdf  used on input line 495.
+
+(pdftex.def)             Requested size: 158.08954pt x 158.08954pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+[16 <./images/Wektor_by_Zureks.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+[17]
+Overfull \hbox (21.84485pt too wide) in paragraph at lines 584--585
+[][] 
+ []
+
+[18] [19]
+Overfull \hbox (21.96974pt too wide) in paragraph at lines 666--666
 []\OT4/cmr/bx/n/17.28 Deklaratywne pro-gra-mo-wa-nie w lo-gi-ce: klau-
  []
 
-[9
 
-]
-Overfull \hbox (1.2538pt too wide) in paragraph at lines 223--223
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
+
+ []
+
+[20]
+Overfull \hbox (1.2538pt too wide) in paragraph at lines 701--701
 [][]\OT4/cmr/bx/n/17.28 Paweª []TO-DO: In-struk-cje ste-ru-j¡-ce prze-pªy-
  []
 
 
-Overfull \hbox (30.31175pt too wide) in paragraph at lines 228--228
+Overfull \hbox (30.31175pt too wide) in paragraph at lines 706--706
 [][]\OT4/cmr/bx/n/17.28 TODO: Po-rów-na-nie za-da« prze-ª¡cz-ni-ka (swit-
  []
 
-[10]
-Overfull \hbox (3.42578pt too wide) in paragraph at lines 274--274
+[21]
+Overfull \hbox (3.42578pt too wide) in paragraph at lines 752--752
 [][]\OT4/cmr/bx/n/17.28 TODO: Ko-do-wa-nie liczb ze zna-kiem w sys-
  []
 
-[11]
+[22] [23]
 Rozdzia\PlPrIeC {\l } IV.
 
-Overfull \hbox (13.69771pt too wide) in paragraph at lines 291--291
+Overfull \hbox (13.69771pt too wide) in paragraph at lines 769--769
 [][]\OT4/cmr/bx/n/17.28 TODO: Stan-dar-do-we me-to-dy-ki pro-ce-su wy-
  []
 
-[12
+[24
 
 ]
-Overfull \hbox (10.99771pt too wide) in paragraph at lines 326--326
+Overfull \hbox (10.99771pt too wide) in paragraph at lines 804--804
 [][]\OT4/cmr/bx/n/17.28 TODO: Za-gad-nie-nia nie-ro-strzy-gal-ne w kon-
  []
 
-[13]
-Overfull \hbox (0.45172pt too wide) in paragraph at lines 341--341
+[25]
+Overfull \hbox (0.45172pt too wide) in paragraph at lines 819--819
 [][]\OT4/cmr/bx/n/17.28 TODO: Ro-dza-je bª¦-dów w kon-tek-±cie ana-
  []
 
 
-Overfull \hbox (7.8738pt too wide) in paragraph at lines 341--341
+Overfull \hbox (7.8738pt too wide) in paragraph at lines 819--819
 \OT4/cmr/bx/n/17.28 li-zy lek-sy-kal-nej, syn-tak-tycz-nej i se-man-tycz-
  []
 
 
-Overfull \hbox (15.3697pt too wide) in paragraph at lines 346--346
+Overfull \hbox (15.3697pt too wide) in paragraph at lines 824--824
 [][]\OT4/cmr/bx/n/17.28 TODO: De-kla-ra-tyw-ne pro-gra-mo-wa-nie funk-
  []
 
-[14] [15] (kurwa_juz_git.aux) ) 
+[26] [27] (kurwa_juz_git.aux) ) 
 Here is how much of TeX's memory you used:
- 14328 strings out of 480236
- 287791 string characters out of 2880557
- 539780 words of memory out of 3000000
- 30588 multiletter control sequences out of 15000+200000
- 543363 words of font info for 52 fonts, out of 3000000 for 9000
+ 14935 strings out of 480236
+ 299013 string characters out of 2880557
+ 588151 words of memory out of 3000000
+ 31177 multiletter control sequences out of 15000+200000
+ 548311 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,6n,88p,454b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 77i,21n,88p,770b,932s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fo
-nts/enc/dvips/pl/plrm.enc}<C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
+nts/enc/dvips/pl/plrm.enc}{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/pl/plms.enc}{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/enc/dv
+ips/pl/plmi.enc}{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/p
+l/plit.enc}{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/pl/plm
+e.enc} <C:\Users\Pawel\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/pl/plbx12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/pl/plr12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/pl/plsl12.pfb>
-Output written on kurwa_juz_git.pdf (15 pages, 61599 bytes).
+ype1/public/pl/plex10.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/pl/plmi12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/pl/plmi6.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/pl/plmi8.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/pl/plr12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/pl/plr6.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/pl/plr8.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/pl/plsl12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/pl/plsy10.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/pl/plsy6.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/pl/plsy8.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/pl/plti12.pfb>
+Output written on kurwa_juz_git.pdf (27 pages, 286413 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
