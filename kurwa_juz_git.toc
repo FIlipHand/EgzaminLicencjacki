@@ -1,9 +1,70 @@
-\contentsline {chapter}{Pytania - dr. hab. Bogdan Księżopolski}{2}{}%
-\contentsline {section}{\numberline {66}Charakterystyka kryptografii symetrycznej oraz asymetrycznej.}{2}{}%
-\contentsline {section}{\numberline {2}Funkcje skrótu (mieszające) i ich zastosowania. }{2}{}%
-\contentsline {chapter}{Pytania - dr. hab. Grzegorz Wójcik}{3}{}%
-\contentsline {section}{\numberline {33}Budowa sieci neuronowych}{3}{}%
-\contentsline {chapter}{Pytania - reszta}{4}{}%
-\contentsline {section}{\numberline {1}Wektory i macierze – definicje i podstawowe operacje.}{4}{}%
-\contentsline {section}{\numberline {6}Sposoby cyfrowej reprezentacji liczby całkowitej i rzeczywistej.}{4}{}%
-\contentsline {section}{\numberline {53}Deklaratywne programowanie w logice: klauzule Horne'a, nawracanie.}{4}{}%
+\contentsline {chapter}{\numberline {I}Pytania - dr. hab. Bogdan Księżopolski}{4}{}%
+\contentsline {section}{\numberline {66}Charakterystyka kryptografii symetrycznej oraz asymetrycznej.}{4}{}%
+\contentsline {section}{\numberline {2}Funkcje skrótu (mieszające) i ich zastosowania. }{4}{}%
+\contentsline {section}{\numberline {9}\color {red} TODO: Protokoły TCP i UDP – porównanie i zastosowanie.}{4}{}%
+\contentsline {section}{\numberline {10}\color {red} TODO: Adresowanie w warstwie Internetu modelu TCP/IP.}{4}{}%
+\contentsline {section}{\numberline {12}\color {red} TODO: Porównanie modelu OSI i TCP/IP. }{5}{}%
+\contentsline {section}{\numberline {13}\color {red} TODO: Mechanizm enkapsulacji w modelu OSI. }{5}{}%
+\contentsline {section}{\numberline {58}\color {red} TODO: Mechanizm sesji w zarządzaniu stanem aplikacji sieciowej. }{5}{}%
+\contentsline {section}{\numberline {59}\color {red} TODO: Mechanizm gniazd – pojęcie, sposób realizacji i zastosowanie }{5}{}%
+\contentsline {section}{\numberline {60}\color {red} TODO: Metody obsługi wielu klientów równolegle w aplikacjach sieciowych.}{5}{}%
+\contentsline {section}{\numberline {61}\color {red} TODO: Pocztowe protokoły warstwy aplikacji. }{5}{}%
+\contentsline {section}{\numberline {62}\color {red} TODO: Porównanie HTTP i WebSocket. }{5}{}%
+\contentsline {section}{\numberline {63}\color {red} TODO: Atrybuty bezpieczeństwa informacji. }{6}{}%
+\contentsline {section}{\numberline {64}\color {red} TODO: Modele dystrybucji kluczy kryptograficznych.}{6}{}%
+\contentsline {section}{\numberline {65}\color {red} TODO: Rodzaje zagrożeń oraz ochrona aplikacji sieciowych.}{6}{}%
+\contentsline {chapter}{\numberline {II}Pytania - dr. hab. Grzegorz Wójcik}{7}{}%
+\contentsline {section}{\numberline {33}Budowa sieci neuronowych}{7}{}%
+\contentsline {section}{\numberline {30}\color {red} TODO: Modele reprezentacji wiedzy.}{7}{}%
+\contentsline {section}{\numberline {31}\color {red} TODO: Mechanizmy wnioskowań. }{7}{}%
+\contentsline {section}{\numberline {32}\color {red} TODO: Metody uczenia maszynowego.}{7}{}%
+\contentsline {section}{\numberline {34}\color {red} TODO: Normalizacja baz danych – pierwsza, druga i trzecia postać normalna. }{7}{}%
+\contentsline {section}{\numberline {35}\color {green}Paweł \color {red} TODO: Modele baz danych (logiczny, relacyjny, fizyczny). }{8}{}%
+\contentsline {section}{\numberline {36}\color {green}Paweł \color {red} TODO: Rodzaje zapytań w języku SQL. }{8}{}%
+\contentsline {section}{\numberline {37}\color {green}Paweł \color {red} TODO: Funkcje w języku SQL. }{8}{}%
+\contentsline {section}{\numberline {38}\color {green}Paweł \color {red} TODO: Transakcje w bazach danych.}{8}{}%
+\contentsline {section}{\numberline {15}\color {red} TODO: Hermetyzacja, dziedziczenie i polimorfizm w programowaniu obiektowym. }{8}{}%
+\contentsline {section}{\numberline {48}\color {red} TODO: Główne paradygmaty programowania – charakterystyka i przykłady. }{8}{}%
+\contentsline {section}{\numberline {17}\color {red} TODO: Paradygmat i przykłady programowania generycznego (rodzajowego). }{8}{}%
+\contentsline {chapter}{\numberline {III}Pytania - reszta}{9}{}%
+\contentsline {section}{\numberline {1}Wektory i macierze – definicje i podstawowe operacje.}{9}{}%
+\contentsline {section}{\numberline {6}Sposoby cyfrowej reprezentacji liczby całkowitej i rzeczywistej.}{9}{}%
+\contentsline {section}{\numberline {53}Deklaratywne programowanie w logice: klauzule Horne'a, nawracanie.}{9}{}%
+\contentsline {section}{\numberline {3}\color {red} TODO: Problemy rekurencyjne i ich rozwiązywanie. }{9}{}%
+\contentsline {section}{\numberline {5}\color {red} TODO: Pozycyjne systemy liczbowe i konwersje pomiędzy nimi. }{10}{}%
+\contentsline {section}{\numberline {7}\color {red} TODO: Typ, zmienna, obiekt i zarządzanie pamięcią. }{10}{}%
+\contentsline {section}{\numberline {8}\color {green}Paweł \color {red} TODO: Instrukcje sterujące przepływem programu. }{10}{}%
+\contentsline {section}{\numberline {11}\color {red} TODO: Porównanie zadań przełącznika (switcha) i routera. }{10}{}%
+\contentsline {section}{\numberline {14}\color {red} TODO: Obiekt i klasa w wybranym języku programowania zorientowanym obiektowo. }{10}{}%
+\contentsline {section}{\numberline {16}\color {red} TODO: Interfejsy i klasy abstrakcyjne w programowaniu obiektowym. }{10}{}%
+\contentsline {section}{\numberline {18}\color {red} TODO: Algorytmy sortowania. }{10}{}%
+\contentsline {section}{\numberline {19}\color {red} TODO: Strategia „dziel i zwyciężaj” budowania algorytmów. }{11}{}%
+\contentsline {section}{\numberline {20}\color {red} TODO: Algorytmy typu zachłannego. }{11}{}%
+\contentsline {section}{\numberline {21}\color {red} TODO: Algorytmy z nawrotami. }{11}{}%
+\contentsline {section}{\numberline {22}\color {red} TODO: Grafy, drzewa, kopce – charakterystyka i przykłady zastosowania. }{11}{}%
+\contentsline {section}{\numberline {47}\color {green}Paweł \color {red} TODO: Definicja i klasy złożoności obliczeniowej – czasowej i pamięciowej. }{11}{}%
+\contentsline {section}{\numberline {56}\color {red} TODO: Kodowanie liczb ze znakiem w systemie U2, generowanie liczby ze znakiem przeciwnym, dodawanie i odejmowanie. }{11}{}%
+\contentsline {chapter}{\numberline {IV}Pytania których raczej nie dostaniemy}{12}{}%
+\contentsline {section}{\numberline {28}28. Różnice pomiędzy obsługą zdarzeń w przerwaniach sprzętowych a obsługą zdarzeń w pętli programowej.}{12}{}%
+\contentsline {section}{\numberline {29}\color {red} TODO: Powody i przykłady stosowania mikrokontrolerów zamiast typowych komputerów. }{12}{}%
+\contentsline {section}{\numberline {39}\color {red} TODO: Standardowe metodyki procesu wytwórczego oprogramowania. }{12}{}%
+\contentsline {section}{\numberline {40}\color {red} TODO: Metodyki zwinne – SCRUM. }{12}{}%
+\contentsline {section}{\numberline {41}\color {red} TODO: Testowanie oprogramowania. }{13}{}%
+\contentsline {section}{\numberline {42}\color {red} TODO: Diagramy UML. }{13}{}%
+\contentsline {section}{\numberline {43}\color {red} TODO: Wzorce projektowe programowania obiektowego. }{13}{}%
+\contentsline {section}{\numberline {44}\color {red} TODO: Definicja funkcji obliczalnej (częściowo rekurencyjnej). }{13}{}%
+\contentsline {section}{\numberline {45}\color {red} TODO: Maszyna Turinga jako model procesów obliczalnych. }{13}{}%
+\contentsline {section}{\numberline {46}\color {red} TODO: Zagadnienia nierostrzygalne w kontekście obliczalności. }{13}{}%
+\contentsline {section}{\numberline {49}\color {red} TODO: Gramatyki bezkontekstowe – definicje, charakterystyki i przykłady. }{13}{}%
+\contentsline {section}{\numberline {50}\color {red} TODO: Analiza leksykalna, syntaktyczna i semantyczna kodu. }{14}{}%
+\contentsline {section}{\numberline {51}\color {red} TODO: Rodzaje błędów w kontekście analizy leksykalnej, syntaktycznej i semantycznej kodu.}{14}{}%
+\contentsline {section}{\numberline {52}\color {red} TODO: Deklaratywne programowanie funkcyjne: rachunek lambda, monady. }{14}{}%
+\contentsline {section}{\numberline {54}\color {red} TODO: Podstawowe układy systemu mikroprocesorowego i sposób wymiany informacji pomiędzy nimi. }{14}{}%
+\contentsline {section}{\numberline {55}\color {red} TODO: Dekoder, multiplekser i demultiplekser: budowa, zasada, działania, przeznaczenie, zastosowanie. }{14}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Budowa i zasada działania generatora obrazu w systemie mikroprocesorowym. }{14}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Wielowarstwowa organizacja systemów komputerowych. }{15}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: System operacyjny – charakterystyka, zadania, klasyfikacja. }{15}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Procesy i wątki – charakterystyka i problemy. }{15}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Zarządzanie pamięcią operacyjną w systemie operacyjnym. }{15}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Organizacja systemu plików i pamięci zewnętrznej. }{15}{}%
+\contentsline {section}{\numberline {57}\color {red} TODO: Podstawowe charakterystyki statystyki opisowej i matematycznej.}{15}{}%

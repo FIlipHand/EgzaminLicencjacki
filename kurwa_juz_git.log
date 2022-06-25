@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  25 JUN 2022 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  25 JUN 2022 16:05
 entering extended mode
 **./kurwa_juz_git.tex
 (kurwa_juz_git.tex
@@ -648,41 +648,131 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (C:\Users\Pawel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write4
-\openout4 = `kurwa_juz_git.toc'.
-
-
+)
 [1
 
 
-{C:/Users/Pawel/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
+{C:/Users/Pawel/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Overfull \hbox (2.53766pt too wide) in paragraph at lines 39--39
+ [][] [][]\OT4/cmr/m/n/12 TODO: In-ter-fej-sy i kla-sy abs-trak-cyj-ne w pro-gr
+a-mo-wa-niu obiek- 
+ []
 
-] [3
+[2]
+Overfull \hbox (0.28769pt too wide) in paragraph at lines 55--55
+ [][] [][]\OT4/cmr/m/n/12 TODO: De-fi-ni-cja funk-cji ob-li-czal-nej (cz¦-±cio-
+wo re-ku-ren-cyj-nej). 
+ []
 
-]
-Overfull \hbox (21.96974pt too wide) in paragraph at lines 79--79
-[]\OT4/cmr/bx/n/17.28 Deklaratywne pro-gra-mo-wa-nie w lo-gi-ce: klau-
+
+Overfull \hbox (12.62506pt too wide) in paragraph at lines 61--61
+ [][] [][]\OT4/cmr/m/n/12 TODO: De-kla-ra-tyw-ne pro-gra-mo-wa-nie funk-cyj-ne:
+ ra-chu-nek lamb- 
+ []
+
+
+Overfull \hbox (9.39175pt too wide) in paragraph at lines 65--65
+ [][] [][]\OT4/cmr/m/n/12 TODO: Wie-lo-war-stwo-wa or-ga-ni-za-cja sys-te-mów k
+om-pu-te-ro-wych. 
+ []
+
+)
+\tf@toc=\write4
+\openout4 = `kurwa_juz_git.toc'.
+
+ [3]
+Rozdzia\PlPrIeC {\l } I.
+
+Overfull \hbox (7.66757pt too wide) in paragraph at lines 76--76
+[][]\OT4/cmr/bx/n/17.28 TODO: Po-rów-na-nie mo-de-lu OSI i TCP/IP. 
  []
 
 [4
 
-] (kurwa_juz_git.aux) ) 
+]
+Overfull \hbox (13.4517pt too wide) in paragraph at lines 96--96
+[][]\OT4/cmr/bx/n/17.28 TODO: Me-to-dy ob-sªu-gi wie-lu klien-tów rów-
+ []
+
+
+Overfull \hbox (4.07773pt too wide) in paragraph at lines 111--111
+[][]\OT4/cmr/bx/n/17.28 TODO: Atry-bu-ty bez-pie-cze«-stwa in-for-ma-
+ []
+
+[5] [6]
+Rozdzia\PlPrIeC {\l } II.
+[7
+
+] [8]
+Rozdzia\PlPrIeC {\l } III.
+
+Overfull \hbox (21.96974pt too wide) in paragraph at lines 203--203
+[]\OT4/cmr/bx/n/17.28 Deklaratywne pro-gra-mo-wa-nie w lo-gi-ce: klau-
+ []
+
+[9
+
+]
+Overfull \hbox (1.2538pt too wide) in paragraph at lines 223--223
+[][]\OT4/cmr/bx/n/17.28 Paweª []TO-DO: In-struk-cje ste-ru-j¡-ce prze-pªy-
+ []
+
+
+Overfull \hbox (30.31175pt too wide) in paragraph at lines 228--228
+[][]\OT4/cmr/bx/n/17.28 TODO: Po-rów-na-nie za-da« prze-ª¡cz-ni-ka (swit-
+ []
+
+[10]
+Overfull \hbox (3.42578pt too wide) in paragraph at lines 274--274
+[][]\OT4/cmr/bx/n/17.28 TODO: Ko-do-wa-nie liczb ze zna-kiem w sys-
+ []
+
+[11]
+Rozdzia\PlPrIeC {\l } IV.
+
+Overfull \hbox (13.69771pt too wide) in paragraph at lines 291--291
+[][]\OT4/cmr/bx/n/17.28 TODO: Stan-dar-do-we me-to-dy-ki pro-ce-su wy-
+ []
+
+[12
+
+]
+Overfull \hbox (10.99771pt too wide) in paragraph at lines 326--326
+[][]\OT4/cmr/bx/n/17.28 TODO: Za-gad-nie-nia nie-ro-strzy-gal-ne w kon-
+ []
+
+[13]
+Overfull \hbox (0.45172pt too wide) in paragraph at lines 341--341
+[][]\OT4/cmr/bx/n/17.28 TODO: Ro-dza-je bª¦-dów w kon-tek-±cie ana-
+ []
+
+
+Overfull \hbox (7.8738pt too wide) in paragraph at lines 341--341
+\OT4/cmr/bx/n/17.28 li-zy lek-sy-kal-nej, syn-tak-tycz-nej i se-man-tycz-
+ []
+
+
+Overfull \hbox (15.3697pt too wide) in paragraph at lines 346--346
+[][]\OT4/cmr/bx/n/17.28 TODO: De-kla-ra-tyw-ne pro-gra-mo-wa-nie funk-
+ []
+
+[14] [15] (kurwa_juz_git.aux) ) 
 Here is how much of TeX's memory you used:
- 14325 strings out of 480236
- 287758 string characters out of 2880557
- 530778 words of memory out of 3000000
- 30586 multiletter control sequences out of 15000+200000
- 542814 words of font info for 51 fonts, out of 3000000 for 9000
+ 14328 strings out of 480236
+ 287791 string characters out of 2880557
+ 539780 words of memory out of 3000000
+ 30588 multiletter control sequences out of 15000+200000
+ 543363 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,5n,88p,454b,140s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/enc/
-dvips/pl/plrm.enc}<C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/pl/plbx12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/pl/plr12.pfb>
-Output written on kurwa_juz_git.pdf (4 pages, 29558 bytes).
+ 77i,6n,88p,454b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fo
+nts/enc/dvips/pl/plrm.enc}<C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/pl/plbx12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/pl/plr12.pfb><C:/Users/Pawel/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/pl/plsl12.pfb>
+Output written on kurwa_juz_git.pdf (15 pages, 61580 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
