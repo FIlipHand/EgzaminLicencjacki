@@ -113,9 +113,34 @@
 			Przykładowe funkcje skrótu to SHA-1 (SHA128), SHA-2 (SHA256), SHA-3(SHA512), MD5.
 		
 		\setcounter{section}{8}
-		\section{\color{red} TODO: Protokoły TCP i UDP – porównanie i zastosowanie.}
+		\section{Protokoły TCP i UDP – porównanie i zastosowanie.}
+		\subsection*{TCP}
 		
-		Lorem ipsum dupa dupa
+		Protokół TCP lub Transmission Control Protocol jest protokołem zorientowanym na połączenie, znajdującym się w warstwie transportowej modelu TCP / IP. Nawiązuje połączenie między komputerem źródłowym a docelowym przed rozpoczęciem komunikacji.
+		
+		\begin{figure}[h!]
+			\centering\includegraphics[scale=0.35]{tcp.png}
+			\caption{TCP}
+		\end{figure}
+		
+		Jest wysoce niezawodny, ponieważ wykorzystuje 3-drożną kontrolę uzgadniania, przepływu, błędu i przeciążenia. Zapewnia to, że dane wysyłane z komputera źródłowego są dokładnie odbierane przez komputer docelowy. Jeśli w przypadku, otrzymane dane nie są w odpowiednim formacie, to TCP ponownie przesyła dane.
+		Poniższe protokoły używają TCP do transmisji danych:
+		\begin{itemize}
+			\item HTTP
+			\item HTTPs
+			\item FTP
+			\item SMTP
+		\end{itemize}
+		
+		\subsection*{UDP}
+		
+		Protokół UDP lub User Datagram Protocol to bezpołączeniowy protokół znajdujący się w warstwie transportowej modelu TCP / IP. Nie ustanawia połączenia ani nie sprawdza, czy komputer docelowy jest gotowy do odbioru, czy też nie, po prostu przesyła dane bezpośrednio. Protokół UDP służy do przesyłania danych z większą szybkością. Jest mniej niezawodny i dlatego jest używany do przesyłania danych, takich jak pliki audio i wideo.
+		UDP nie gwarantuje ani dostarczenia danych, ani nie przesyła utraconych pakietów.
+		
+		\begin{figure}[h!]
+			\centering\includegraphics[scale=0.35]{udp.jpg}
+			\caption{UDP :D}
+		\end{figure}
 		
 		\setcounter{section}{9}
 		\section{\color{red} TODO: Adresowanie w warstwie Internetu modelu TCP/IP.}
