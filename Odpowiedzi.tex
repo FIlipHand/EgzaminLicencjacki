@@ -87,8 +87,75 @@
 				
 							
 			
-			\subsection{\color{red}Protokół IP.}
-				rezerwuje - Rafał
+			\subsection{Protokół IP.}
+				\subsubsection{IP (Internet Protocol)}
+				Protokół internetowy jest protokołem komunikacyjnym warstwy Internet w modelu TCP/IP (odpowiada warstwie sieciowej modelu OSI). Protokół ten definiuje zasady i sposoby postępowania urządzeń sieciowych w celu nawiązania połączenia, utrzymania go i samej transmisji danych. Protokół IP stosowany jest w większości rodzajów sieci, w tym w sieci lokalnej i sieci Internet (każdy host, np. komputer, posiada swój własny, unikalny dla sieci adres IP).
+				
+				Dane z użyciem protokołu IP transmitowane są w pakietach (paczkach danych). Nie gwarantuje on jednak dotarcia danych do celu czy utrzymania kolejności pakietów. Może się zdążyć, ze odbiorca otrzyma kilkukrotnie ten sam pakiet z całej paczki danych, pakiety dotrą w innej kolejności lub nie dotrą w ogóle. W celu zapewnienia prawidłowej transmisji stosuje się różne techniki w wyższej warstwie, np. z użyciem protokołu TCP.
+				
+				Ponieważ każdy host w sieci posiada swój własny unikalny adres IP, obecnie wykorzystywana czwarta wersja protokołu (v4) okazała się niewystarczająca i brakuje wolnych adresów IP. W tym celu utworzona została wersja szósta (v6) znacznie zwiększająca ilość różnych adresów IP. Same adresy IP dzielone są na kilka grup z których 3 najważniejsze to adresy publiczne, adresy prywatne (do wykorzystania w sieciach domowych, np. 192.168.1.1), oraz adresy pętli zwrotnej (np. 127.0.0.1).
+				
+				W skrócie:
+				\begin{itemize}
+					\item protokół komunikacyjny z warstwy trzeciej (sieci)
+					\item jest to protokół bezpołączeniowy
+					\item głównym zadaniem tego protokołu jest przypisywanie każdemu urządzeniu
+					sieciowemu adresu IP i wybór trasy w celu przesłania pakietów z danymi (w
+					przypadku problemów w przesyłaniu pakietów protokół wybierze trasy alternatywne
+					do przesłania pakietów)
+					\item nie zapewnia dostarczania pakietów (nie posiada mechanizmów retransmisji, lecz na
+					szczęście za to odpowiadają protokoły z warstw wyższych)
+				\end{itemize}
+			\subsubsection{Klasy IP}
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.65]{ip-classes.jpg}
+					\caption{Klasy IP}
+				\end{figure}
+			\subparagraph{Adresy klasy A} przeznaczone są dla dużych sieci. Pierwszy bit oktetu w którym zawarty jest adres sieci jest równy 0. W związku z tym adresy sieci mogą przyjmować wartości od 0 do 127. Sieci 0 i 127 są zarezerwowane, więc do wykorzystania pozostają sieci od 1 do 126. W każdej sieci należącej do klasy A możemy wyodrębnić 16777216 adresów (liczba urządzeń będzie o 2 mniejsza, ale o tym w dalszej części artykułu). Klasa 127.0.0.0 wykorzystywana jest na potrzeby pętli zwrotnej, tj. umożliwia wysyłanie pakietów do samego siebie. Maska standardowa dla tej klasy to 255.0.0.0.
+			
+			\subparagraph{Adresy klasy B} przeznaczone są do sieci średniej wielkości. Adres sieci zawarty jest w dwóch oktetach. Pierwsze dwa bity pierwszego oktetu wynoszą 10. W każdej sieci należącej do tego klasy można wyróżnić 65536 adresów (65534 urządzenia). Do tej klasy należą adresy sieci od 128 do 191 w ujęciu dziesiętnym. Maska standardowa dla tej klasy to 255.255.0.0.
+			
+			\subparagraph{Adresy klasy C} przeznaczone są dla małych sieci, gdyż każda sieć może posiadać „jedynie” 256 adresów (254 urządzenia). Na adres sieci w sieciach należących do tej klasy przeznaczone są 3 oktety. Pierwsze trzy bity adresu wynoszą 110, w związku z tym do klasy tej należą adresy od 192 do 223 dziesiętne. Maska standardowa dla tej klasy to 255.255.255.0.
+			
+			\subparagraph{Klasa D} została zarezerwowana na potrzeby rozsyłania grupowego przy użyciu adresów IP. Adres należący do tej klasy umożliwia przekierowanie pakietów do zdefiniowanej wcześniej grupy odbiorców. Dzięki temu możliwe jest przesłanie danych równocześnie do wielu odbiorców. Adresy tej klasy wykorzystywane są np. przez protokoły routingu. Pierwsze cztery bity adresu IP są równe 1110. Adresy należące do tej klasy zawierają się w przedziale od 224 do 239.
+			
+			\subparagraph{Adresy należące do klasy E} zostały zarezerwowane przez Internet Engineering Task Force na potrzeby badawcze, wobec tego nie są dostępne publicznie. Pierwsze cztery bity adresu klasy E mają wartość 1111, w związku z tym adresy tej klasy zawierają się w przedziale od 240 do 255 dziesiętnie.
+			\subsubsection{Prywatne adresy IP}
+				Adresy prywatne wg klas:
+				\begin{itemize}
+					\item Klasa A – 10.0.0.0 – 10.255.255.255 z maską 255.0.0.0
+					\item Klasa B – 172.16.0.0 – 172.31.255.255 z maską 255.255.0.0
+					\item Klasa C – 192.168.0.0 – 192.168.255.255 z maską 255.255.255.0
+				\end{itemize}
+			\subsubsection{Rodzaje trasowania protokołu IP}
+			\begin{enumerate}
+				\item Anycast - dane są wysyłane do (topologicznie) najbliższego odbiorcy
+				\item Broadcast - dane wysyła do wszystkich możliwych hostów
+				\item Multicast - dane są wysyłane do wielu wybranych hostów (np. do hostów należących
+				do jednej grupy)
+				\item Unicast - dane są wysyłane do jednego odbiorcy
+				\item Geocast - dane są wysyłane do wielu wybranych hostów należących do jednej strefy
+				geograficznej
+			\end{enumerate}
+		
+			\subsubsection{Datagram IP}
+			\begin{figure}[ht!]
+				\centering\includegraphics[scale=0.65]{ip-datagram.jpg}
+				\caption{Datagram IPv4}
+			\end{figure}
+			\begin{description}
+				\item[Wersja] - w tym polu nagłówka znajduje się wersja protokołu IP, w przypadku IPv4 znajduje się tam cyfra 4
+				\item[IHL] - długość nagłówka pakietu IP wyrażona w postaci liczby czterobajtowych części
+				\item[Typ usługi] – określa priorytet pakietu
+				\item[Długość całkowita] – pole zawiera całkowitą długość pakietu (nagłówek + dane), maksymalna długość pakietu to 65535 bajtów
+				\item[Identyfikator ]  – pole zawiera unikatory identyfikator dla każdego pakietu wykorzystywany do połączenia pakietów w strumień danych
+				\item[Flagi] – określa między innymi czy pakiet może być fragmentowany
+				\item[Przesunięcie fragmentu] – umożliwia złożenie pakietu w całość pakietu, określają miejsce danego fragmentu w całym pakiecie
+				\item[Czas życia (TTL – Time To Live)] – ilość przeskoków przez które może pakiet przejść zanim zostanie odrzucony (urządzenia przez które przechodzi dany pakiet zmniejszają tą wartość o 1)
+				\item[Protokół ] – to pole zawiera informacje jaki protokół warstwy transportowej został wykorzystany (TCP, UDP, ICMP lub inne)
+				\item[Suma kontrolna nagłówka] – gdy odbiorca dostanie pakiet, sprawdza jego poprawność obliczając sumę kontrolną i porównując ją z sumą kontrolną zapisaną w nagłówku
+				\item[Adres źródłowy i adres docelowy ] – zawierają adresy IP urządzeń które przesyłają między sobie dane zapisane w formacie binarnym
+			\end{description}
 			\subsection{\color{red}Modele sieci komputerowych.}
 				a
 			\subsection{\color{red}Porównanie protokołów IPv4 i IPv6.}
