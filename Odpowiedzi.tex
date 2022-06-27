@@ -137,31 +137,28 @@
 				\item Geocast - dane są wysyłane do wielu wybranych hostów należących do jednej strefy
 				geograficznej
 			\end{enumerate}
-		
-			\subsubsection{Datagram IP}
-			\begin{figure}[ht!]
-				\centering\includegraphics[scale=0.65]{ip-datagram.jpg}
-				\caption{Datagram IPv4}
-			\end{figure}
-			\begin{description}
-				\item[Wersja] - w tym polu nagłówka znajduje się wersja protokołu IP, w przypadku IPv4 znajduje się tam cyfra 4
-				\item[IHL] - długość nagłówka pakietu IP wyrażona w postaci liczby czterobajtowych części
-				\item[Typ usługi] – określa priorytet pakietu
-				\item[Długość całkowita] – pole zawiera całkowitą długość pakietu (nagłówek + dane), maksymalna długość pakietu to 65535 bajtów
-				\item[Identyfikator ]  – pole zawiera unikatory identyfikator dla każdego pakietu wykorzystywany do połączenia pakietów w strumień danych
-				\item[Flagi] – określa między innymi czy pakiet może być fragmentowany
-				\item[Przesunięcie fragmentu] – umożliwia złożenie pakietu w całość pakietu, określają miejsce danego fragmentu w całym pakiecie
-				\item[Czas życia (TTL – Time To Live)] – ilość przeskoków przez które może pakiet przejść zanim zostanie odrzucony (urządzenia przez które przechodzi dany pakiet zmniejszają tą wartość o 1)
-				\item[Protokół ] – to pole zawiera informacje jaki protokół warstwy transportowej został wykorzystany (TCP, UDP, ICMP lub inne)
-				\item[Suma kontrolna nagłówka] – gdy odbiorca dostanie pakiet, sprawdza jego poprawność obliczając sumę kontrolną i porównując ją z sumą kontrolną zapisaną w nagłówku
-				\item[Adres źródłowy i adres docelowy ] – zawierają adresy IP urządzeń które przesyłają między sobie dane zapisane w formacie binarnym
-			\end{description}
 			\subsection{\color{red}Modele sieci komputerowych.}
 				a
 			\subsection{\color{red}Porównanie protokołów IPv4 i IPv6.}
 				a
-			\subsection{\color{red}Format pakietu IP (poszczególne pola, zastosowanie).}
-				rezerwuje - Rafał
+			\subsection{Format pakietu IP (poszczególne pola, zastosowanie).}
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.65]{ip-datagram.jpg}
+					\caption{Datagram IPv4}
+				\end{figure}
+				\begin{description}
+					\item[Wersja] - w tym polu nagłówka znajduje się wersja protokołu IP, w przypadku IPv4 znajduje się tam cyfra 4
+					\item[IHL] - długość nagłówka pakietu IP wyrażona w postaci liczby czterobajtowych części
+					\item[Typ usługi] – określa priorytet pakietu
+					\item[Długość całkowita] – pole zawiera całkowitą długość pakietu (nagłówek + dane), maksymalna długość pakietu to 65535 bajtów
+					\item[Identyfikator ]  – pole zawiera unikatory identyfikator dla każdego pakietu wykorzystywany do połączenia pakietów w strumień danych
+					\item[Flagi] – określa między innymi czy pakiet może być fragmentowany
+					\item[Przesunięcie fragmentu] – umożliwia złożenie pakietu w całość pakietu, określają miejsce danego fragmentu w całym pakiecie
+					\item[Czas życia (TTL – Time To Live)] – ilość przeskoków przez które może pakiet przejść zanim zostanie odrzucony (urządzenia przez które przechodzi dany pakiet zmniejszają tą wartość o 1)
+					\item[Protokół ] – to pole zawiera informacje jaki protokół warstwy transportowej został wykorzystany (TCP, UDP, ICMP lub inne)
+					\item[Suma kontrolna nagłówka] – gdy odbiorca dostanie pakiet, sprawdza jego poprawność obliczając sumę kontrolną i porównując ją z sumą kontrolną zapisaną w nagłówku
+					\item[Adres źródłowy i adres docelowy ] – zawierają adresy IP urządzeń które przesyłają między sobie dane zapisane w formacie binarnym
+				\end{description}
 			\subsection{\color{red}Ethernet.}
 				a
 			\subsection{\color{red}Protokoły warstwy aplikacji.}
