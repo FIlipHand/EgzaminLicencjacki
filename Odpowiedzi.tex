@@ -99,8 +99,73 @@
 				a
 			\newpage\subsection{\color{red}Protokoły warstwy aplikacji.}
 				a
-			\newpage\subsection{\color{red}Charakterystyka modelu OSI i TCP/IP.}
-				rezerwuje - Rafał
+			\newpage\subsection{Charakterystyka modelu OSI i TCP/IP.}
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{osi-tcp.png}
+					\caption{OSI - TCP/IP}
+				\end{figure}
+				\subsubsection{OSI}
+				\subparagraph{Model ISO/OSI} (International Organization for Standardization / Open Systems
+				Interconnection) - to standard opisujący komunikację sieciową oraz jej etapy. Jest on znany
+				jako “model odniesienia” który służy do analizy (i zrozumienia) komunikacji.
+				
+				Warstwy:
+				\begin{enumerate}
+					\item \textbf{Warstwa fizyczna} - zaliczają się do niej wszystkie media transmisji danych (np.
+					kable, fale radiowe) oraz sposób przesyłania przez nich informacji (np. jaka
+					częstotliwość lub amplituda). 
+					\item \textbf{Warstwa łącza danych} - przeprowadza ramkowanie danych (dodawanie nagłówka
+					do danych) i przesyła je przez warstwę fizyczną. W nagłówku zawarty jest adres
+					MAC nadawcy oraz odbiorcy (host zna adresy MAC swoich najbliższych sąsiadów).
+					Przykładowy protokół: PPP, Ethernet, STP
+					\item \textbf{Warstwa sieci} - w tej warstwie tworzone są pakiety (dane + nagłówek IP).
+					Wykonywane jest tutaj adresowanie logiczne, routing oraz szukanie najlepszej
+					ścieżki.\\
+					Przykładowe protokoły: ARP, ICMP, IPv4, IPv6, BGP, RIP, OSPF
+					\item \textbf{Warstwa transportowa} - tworzy ona segmenty danych (nagłówek zawierający
+					numer portów + dane) i wykorzystuje do nich przesyłu przez protokół UDP lub TCP.
+					Mogą tutaj występować mechanizmy zapewniające dostarczanie danych jak np.
+					retransmisja (TCP ma, a UDP tego nie ma).\\
+					Przykładowe protokoły: TCP, UDP, SSL/TLS
+					\item \textbf{Warstwa sesji} - nie modyfikuje danych lecz zarządza ona sesją i synchronizacją
+					danych. Mając jakieś dane wie ona do jakiej aplikacji przesłać te dane (umożliwia
+					komunikację między aplikacjami [end-to-end]).\\
+					Przykładowe protokoły: NetBIOS, NFS, PAP
+					\item \textbf{Warstwa prezentacji} - polega na normalizacji danych według ustalonych
+					standardów poprzez konwersję (zamianę), kompresję, szyfrowanie.\\
+					Przykładowe protokoły: SSl, TLS, MIME
+					\item \textbf{Warstwa aplikacji} - tutaj działają aplikacje które widzi użytkownik służące do
+					przyjmowania i wyświetlania danych użytkownika oraz przy wykorzystaniu gniazd do
+					przyjmowaniu danych z sieci i wysyłaniu danych do sieci\\
+					Przykładowe protokoły: HTTP, FTP, POP3, SNMP
+				\end{enumerate}
+			
+			\subsubsection{TCP/IP}
+			\subparagraph{Model TCP/IP}- model określany inaczej jako “model protokołów”, gdzie każda warstwa
+			wykonuje konkretne zadania.
+			
+			Warstwy:
+			\begin{enumerate}
+				\item \textbf{Warstwa dostępu do sieci} - służy ona do przekazywania danych między
+				urządzeniami sieciowymi (karty sieciowe, modemy) za pośrednictwem medium
+				fizycznym (np. kable)\\
+				Odpowiada ona warstwie fizycznej i łącza danych z modelu OSI.
+				\item \textbf{Warstwa internetu} - w tej warstwie występują routery opierające się o adresy IP i
+				dokonujące trasowania (wyszukiwanie najlepszej trasy do odbiorcy).
+				Występują tutaj protokoły takie jak: IP, ARP, ICMP (do diagnostyki), IGRP (do
+				transmisji grupowej).\\
+				Odpowiada ona warstwie sieci z modelu OSI.
+				\item \textbf{Warstwa transportowa} - służy ona do obsługi komunikacji oraz jej zabezpieczenia
+				(czyli wykorzystanie np. retransmisji danych). Ta warstwa wykorzystuje porty dzięki
+				czemu wie z jakiej aplikacji przychodzą dane, a podczas odbierania do jakiej aplikacji
+				przesłać dane. Występuje tutaj protokół TCP oraz UDP.\\
+				Odpowiada ona warstwie transportowej z modelu OSI.
+				\item \textbf{Warstwa aplikacji} - w tej warstwie występują procesy oraz aplikacje z których
+				korzystają użytkownicy (np. serwer WWW, przeglądarka internetowa). Działają tutaj
+				protokoły tj. HTTP, FTP, Telnet.\\
+				Odpowiada ona warstwie sesji, prezentacji i aplikacji z modelu OSI.
+			\end{enumerate}
+			
 			\newpage\subsection{\color{red}Rodzaje i przykłady nagłówków HTTP.}
 				a
 			\newpage\subsection{\color{red}Protokół WebSocket.}
