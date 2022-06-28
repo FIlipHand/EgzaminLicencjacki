@@ -6,7 +6,7 @@
 
 Odpowiedzi na pytania na egzamin licencjacki. 
 
-Jak kto chce, umie i na czymś się zna to niech dodanie pull requesty.
+Jak kto chce, umie i na czymś się zna to niech dodaje pull requesty.
 
 Dlaczego LaTeX?
 1. Lubie w jaki sposób wygląda latex.
