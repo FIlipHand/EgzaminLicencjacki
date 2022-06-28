@@ -467,8 +467,44 @@
 					\item \verb*|HAVING| - filtrowanie grup, działa podobnie do WHERE. WHERE oraz HAVING mogą występować jednocześnie w zapytaniu.
 				\end{itemize}
 				
-			\newpage\subsection{\color{green} Paweł \color{red}Projektowanie baz danych oraz model związków encji.}
-				a
+			\newpage\subsection{Projektowanie baz danych oraz model związków encji.}
+			\subsubsection{Projektowanie baz danych}
+				Etapy projektowania systemów bazodanowych:
+				\begin{itemize}
+					\item \textbf{Sformułowanie problemu}
+					\item \textbf{Analiza wycinka rzeczywistości} - wywiad z ekspertem dziedzinowym, analiza wymagań funkcjonalnych (co dodawać, co usuwać itd.) i niefunkcjonalnych (tryb graficzny, platforma sprzętowa itd.)
+					\item \textbf{Opracowanie konceptualnego modelu danych}, czyli wyodrębnienie i zdefiniowanie encji, związków między nimi oraz atrybutów (taka jakby luźna forma) \\
+					Projektowanie modelu konceptualnego bazy danych składa się z następujących etapów:
+					\begin{itemize}
+						\item \textbf{określenie zbiorów encji} - jakie encje (tabele) będzie zawierać baza?
+						\item \textbf{określenie atrybutów encji} - jakie cechy (kolumny) będą miały poszczególne encje?
+						\item \textbf{określenie dziedziny atrybutów} - jaki zakres wartości będzie miał każdy atrybut?
+						\item \textbf{ustalenie kluczy podstawowych} - a'la klucze główne (?)
+						\item \textbf{określenie związków między encjami} - a'la klucze obce (?)
+					\end{itemize}
+					\textbf{Encja} to każdy element rzeczywistości, który można scharakteryzować i odróżnić od innych obiektów, np. książka (przedmiot), klient (obiekt), zamówienie (zjawisko), stan cywilny (stan). \\
+					\textbf{Atrybut} to cecha encji. Zestaw atrybutów, które określamy dla encji, zależy od potrzeb bazy danych (np. książka ma atrybuty: tytuł, autor, ...) \\
+					\textbf{Dziedzina} opisuje jakie wartości może przyjąć dany atrybut, np. tytuł książki to napis o długości do x znaków.
+					\item \textbf{Opracowanie modelu logicznego}, czyli wyrażenie świata rzeczywistego za pomocą reguł modelu danych (np. relacyjnego). Transformujemy model konceptualny do logicznego. Zamiast encji są tabele, zamiast związków są wiązania poprzez klucze główne i obce itd. Następuje normalizacja relacji.
+					\item \textbf{Opracowanie modelu fizycznego}, czyli konstruowanie modelu świata rzeczywistego za pomocą struktur danych i mechanizmów istniejących w wybranym SZBD (systemie zarządzania bazami danych), czyli np naklepanie tego w MySQL
+					\item \textbf{Tworzenie aplikacji}
+					\item \textbf{Testowanie systemu}
+				\end{itemize}
+				
+			\newpage
+			\subsubsection{Model związków encji}
+			\noindent  Model związków encji (model ER lub ERD) to jedna z najpopularniejszych metod modelowania danych. Służy do graficznego przedstawiania koncepcji projektowanej bazy danych. Jest bardzo podobny do relacyjnego modelu. Diagram taki pokazuje obiekty (encje), ich cechy (atrybuty) oraz relacje między nimi. Elementy takie, jak encja, atrybut oraz związek zostały opisane stronę wyżej. \\ \\
+			Typy związków encji:
+			\begin{itemize}
+				\itemsep 0em
+				\item \textbf{jeden do jednego} (1:1) \\
+				Związek ten określa, iż każde wystąpienie danego obiektu (encji) związane jest wyłącznie z pojedynczym wystąpieniem innego bytu. Na przykład: Pracownik w organizacji ma przypisane konkretne Miejsce, a to Miejsce jest przypisane do konkretnego Pracownika. Kierownik zarządza jednym Działem, a Dział zarządzany jest przez jednego Kierownika.
+				\item \textbf{jeden do wielu} (1:N) \\
+				Związek ten określa, iż jedno wystąpienie danego obiektu (encji) związane jest z większą ilością wystąpień innego bytu. Na przykład: Klient składa wiele Zamówień. Konkretne Zamówienie jest składane przez danego Klienta. W Firmie istnieje wiele Działów. Konkretny Dział istnieje w danej Firmie.
+				\item \textbf{wiele do wielu} (M:N) \\
+				Związek ten określa, iż jedno wystąpienie danego obiektu (encji) związane jest z większą ilością wystąpień innego bytu, tak samo jak jedno wystąpienie innego bytu może być powiązane z większą ilością wystąpień tego pierwszego obiektu. Przykładem takiego związku może być zależność jaka występuje pomiędzy Studentem oraz Wykładem. Student zapisany może być na wiele Wykładów, tak i na dany Wykład zapisanych może być wielu Studentów.
+			\end{itemize}
+			
 			\newpage\subsection{\color{green} Paweł \color{red}Problemy indeksowania baz danych, rodzaje indeksów, indeksy typu B+ drzewo.}
 				a
 			\newpage\subsection{\color{green} Paweł \color{red}Przetwarzanie transakcyjne OLTP (On-Line Transaction Processing).}
