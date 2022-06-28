@@ -507,9 +507,37 @@
 			
 			\newpage\subsection{\color{green} Paweł \color{red}Problemy indeksowania baz danych, rodzaje indeksów, indeksy typu B+ drzewo.}
 				a
-			\newpage\subsection{\color{green} Paweł \color{red}Przetwarzanie transakcyjne OLTP (On-Line Transaction Processing).}
-				a
+			\newpage\subsection{Przetwarzanie transakcyjne OLTP (On-Line Transaction Processing).}
+		\textbf{OLTP} (Online Transaction Processing) to kategoria aplikacji klient-serwer dotyczących baz danych w ramach bieżącego przetwarzania transakcji obejmujących takie zastosowania jak systemy rezerwacji, obsługa punktów sprzedaży, systemy śledzące itp. W systemach tych klient współpracuje z serwerem transakcji, zamiast z serwerem bazy danych.  Zastosowanie - np. w bankowości internetowej, w handlu detalicznym, podczas składania zamówień lub przy wysyłaniu wiadomości tekstowych. Transakcje te (tradycyjnie określane jako transakcje gospodarcze lub finansowe) są rejestrowane i zabezpieczane w taki sposób, aby przedsiębiorstwo mogło w każdej chwili uzyskać do nich dostęp w celach księgowych lub sprawozdawczych. \\
+
+		System OLTP:
+		\begin{itemize}
+			\itemsep 0em
+			\item Umożliwia wykonywanie w czasie rzeczywistym dużej liczby transakcji bazodanowych przez dużą liczbę osób
+			\item Wymaga błyskawicznych czasów reakcji
+			\item Często modyfikuje małe ilości danych i zazwyczaj dokonuje tyle samo odczytów, co zapisów danych
+			\item Używa indeksowanych danych w celu skrócenia czasu odpowiedzi
+			\item Wymaga częstego lub równoczesnego wykonywania kopii zapasowych bazy danych
+			\item Wymaga stosunkowo niewiele miejsca do przechowywania danych
+			\item Zazwyczaj obsługuje proste zapytania dotyczące tylko jednego lub kilku rekordów
+		\end{itemize}
 		
+		\textbf{Transakcja} to zbiór operacji na bazie danych, które stanowią w istocie pewną całość i powinny być wykonane wszystkie lub żadna z nich. Składa się zawsze z trzech etapów: \textbf{rozpoczęcia, wykonania i zamknięcia}. W systemach bazodanowych istotne jest, aby trwała jak najkrócej, ponieważ równolegle może być wykonywane wiele transakcji i część operacji musi zostać wykonana w pewnej kolejności. Każdy etap transakcji jest logowany, dzięki czemu w razie awarii można odtworzyć stan bazy sprzed transakcji. \\
+		Cechy transakcji: \textbf{ACID} \\
+		- \textbf{A}tomicity - atomowość - wykona się wszystko albo nic (zbiór operacji = całość); \\
+		- \textbf{C}onsistency - spójność - baza przed i po zmianach jest spójna; \\
+		- \textbf{I}solation - izolacja - równolegle wykonywane transakcje nie mają na siebie wpływu; \\
+		- \textbf{D}urability - trwałość - zmiany prowadzone przez transakcje są trwałe (nawet w przypadku awarii);\\
+		W SQL wyróżniamy następujące polecenia dotyczące transakcji:
+		\begin{itemize}
+			\itemsep 0em
+			\item \verb*|BEGIN| lub \verb*|BEGIN WORK| – rozpoczęcie transakcji
+			\item \verb*|COMMIT| – zatwierdzenie zmian wykonanych w obrębie transakcji
+			\item \verb*|ROLLBACK| – odrzucenie zmian wykonanych w obrębie transakcji
+			\item \verb*|SAVEPOINT nazwa| – zdefiniowanie punktu pośredniego o określonej nazwie
+			\item \verb*|RELEASE SAVEPOINT nazwa| – skasowanie punktu pośredniego (nie wpływa w żaden sposób na stan transakcji)
+			\item \verb*|ROLLBACK TO SAVEPOINT nazwa| – wycofanie transakcji do stanu zapamiętanego w podanym punkcie pośrednim.
+		\end{itemize}
 		\newpage\section{Paradygmaty}
 			\subsection{\color{red}Założenia paradygmatu programowania obiektowego.}
 				a
