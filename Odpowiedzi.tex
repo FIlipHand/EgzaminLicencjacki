@@ -505,8 +505,52 @@
 				Związek ten określa, iż jedno wystąpienie danego obiektu (encji) związane jest z większą ilością wystąpień innego bytu, tak samo jak jedno wystąpienie innego bytu może być powiązane z większą ilością wystąpień tego pierwszego obiektu. Przykładem takiego związku może być zależność jaka występuje pomiędzy Studentem oraz Wykładem. Student zapisany może być na wiele Wykładów, tak i na dany Wykład zapisanych może być wielu Studentów.
 			\end{itemize}
 			
-			\newpage\subsection{\color{green} Paweł \color{red}Problemy indeksowania baz danych, rodzaje indeksów, indeksy typu B+ drzewo.}
-				a
+			\newpage\subsection{Problemy indeksowania baz danych, rodzaje indeksów, indeksy typu B+ drzewo.}
+				\subsubsection{Problemy indeksowania baz danych}
+				Problem z przeszukiwaniem baz danych polega na tym, że… tabele w MySQL (a także w innych RDBMS) \textbf{nie są posortowane według kolumn}, dzięki którym wyciągamy odpowiednie dane. Dane ulegają aktualizacji, usuwaniu i ciągle dodawane są nowe. Jedyna „kolejność” to często klucz główny, który jest de facto indeksem. Nie jest to przydatna kolejność kiedy szukamy danych nie po kluczu a po jakimś innym polu np:
+					\begin{verbatim}
+						SELECT nazwa_produktu FROM produkty WHERE cena = 128; 
+					\end{verbatim}
+				Jeżeli mielibyśmy te nasze produkty posortowane według ceny, to znalezienie było by banalne. W przypadku kiedy dane są posortowane po kluczu głównym trzeba „sprawdzić” wszystkie rekordy i nie mamy możliwości ułatwienia sobie zadania bo produkty mogą mieć przecież różną cenę. Mówi wtedy że dokonujemy \textbf{pełnego skanu tabeli} (ang. full table scan), który działa niekorzystnie na wydajność – zabiera po prostu za wiele czasu. Sztuka optymalizacji za pomocą indeksowania polega na unikaniu tego pełnego skanu. Działanie indeksu polega na tym, że zawiera w przystępnej postaci informację, w których komórkach pamięci znajdują się produkty o cenie 128. Z tego korzysta RDBMS – najpierw uderza do indeksu a kiedy już wie skąd ma pobrać dane to od razu przechodzi do odpowiednich miejsc bez przeszukiwania całej tabeli i zwraca wynik użytkownikowi. \\
+				
+				\noindent \textbf{Zalety indeksów:} znacznie przyspieszają pewne SELECTy \\
+				\textbf{Wady selectów:} spowalniają dodawanie, modyfikowanie i usuwanie danych (w przypadku edycji tabeli należy również zaktualizować jej indeks)
+				
+				\subsubsection{Rodzaje indeksów}
+				\begin{itemize}
+					\item \textbf{Ze względu na liczbę wskazań indeksu (ile rekordów wskazuje indeks)}:
+						\subitem \textit{indeks rzadki} - zawiera rekordy tylko dla wybranych rekordów indeksowanego pliku (indeksowana jest tylko część pliku)
+						\subitem \textit{indeks gęsty} - zawiera rekord indeksu dla każdego rekordu indeksowanego pliku (indeksowany jest cały plik)
+					\item \textbf{Ze względu na liczbę poziomów indeksu (indeks może wskazywać na inny indeks)}:
+						\subitem \textit{indeks jednopoziomowy} - do pliku z danymi tworzony jest tylko jeden indeks na dany atrybut
+						\subitem \textit{indeks wielopoziomowy} - do pliku z danymi tworzonych jest wiele indeksów na dany atrybut (tworzenie indeksu do indeksu)
+					\item \textbf{Ze względu na charakterystykę indeksowanego atrybutu}:
+						\subitem \textit{indeks podstawowy} - - jest on założony na atrybucie (unikalnym) który umożliwia porządkowanie pliku (np. klucz główny, PESEL, dane osobowe). Jest to indeks rzadki.
+						\subitem \textit{indeks zgrupowany} - jest on zakładany na atrybucie który nie jest unikalny (również umożliwia porządkowanie pliku) (np. imię, wartość liczbowa). Ten indeks wskazuje na pierwszy blok w którym występuje dana wartość (patrz wartość 2, 3, 4). Jest to indeks rzadki.
+						\subitem \textit{indeks wtórny} - jest on zakładany na atrybucie który nie jest atrybutem uporządkowanym (czyli taki według którego plik nie jest uporządkowany). Jest to indeks gęsty.
+					\item \textbf{Ze względu na liczbę indeksowanych atrybutów}
+						\subitem \textit{indeks z kluczem prostym} - indeksowany jest tylko jeden atrybut/klucz
+						\subitem \textit{indeks z kluczem złożonym} - indeksowane jest wiele atrybutów jednocześnie (klucz)
+					\item \textbf{Ze względu na zarządzanie strukturą}
+						\subitem \textit{indeksowanie statyczne} - indeks nie ma mechanizmów które modyfikują strukturę czyli np. usuwanie pozostawia puste rekordy w indeksie, a dodawanie polega na dodawaniu rekordów do specjalnego miejsca zwanego “blokiem przepełnienia”
+						\subitem \textit{indeksowanie dynamiczne} - indeks ma mechanizmy które modyfikują strukturę (i nie ma tych problemów co w indeksowaniu statycznym)
+				\end{itemize}
+				\subsubsection{Indeksy typu B+ drzewo}
+				\begin{itemize}
+				\itemsep 0em
+				\item to rodzaj indeksowania dynamicznego wielowarstwowego które jest przedstawione w postaci drzewa
+				\item każdy indeks posiada wskaźnik (który nie jest liściem) wskazuje na inny indeks
+				\item wskaźnik po lewej stronie klucza (wartości atrybutu) zawiera wartości mniejsze, a po prawej większe
+				\item węzły tego drzewa mogą pomieścić określona ilość rekordów indeksu
+				\item gdy rekordów w węźle jest za dużo to następuje dzielenie węzła, a gdy w dwóch węzłach jest mniej niż połowa to następuje łączenie węzłów
+				\item B+ drzewo rośnie do góry (tak samo jak B)
+				\item jest to drzewo zrównoważone (odległość od korzenia do liścia wszędzie jest taka sama)
+				\item węzły które nie są liśćmi nie posiadają wartości (w B-drzewie posiadały)
+				\item wartości kluczy które są w węzłach wewnętrznych powtarzają się w liściach (np. (2,4) C (1,2,3,4,5)
+				\item liście są ze sobą połączone (liść o mniejszych wartościach ma wskaźnik do liścia o większych wartościach)
+				\item Wyszukiwanie informacji w drzewie wynosi O(logn)
+				\end{itemize}
+
 			\newpage\subsection{Przetwarzanie transakcyjne OLTP (On-Line Transaction Processing).}
 		\textbf{OLTP} (Online Transaction Processing) to kategoria aplikacji klient-serwer dotyczących baz danych w ramach bieżącego przetwarzania transakcji obejmujących takie zastosowania jak systemy rezerwacji, obsługa punktów sprzedaży, systemy śledzące itp. W systemach tych klient współpracuje z serwerem transakcji, zamiast z serwerem bazy danych.  Zastosowanie - np. w bankowości internetowej, w handlu detalicznym, podczas składania zamówień lub przy wysyłaniu wiadomości tekstowych. Transakcje te (tradycyjnie określane jako transakcje gospodarcze lub finansowe) są rejestrowane i zabezpieczane w taki sposób, aby przedsiębiorstwo mogło w każdej chwili uzyskać do nich dostęp w celach księgowych lub sprawozdawczych. \\
 
