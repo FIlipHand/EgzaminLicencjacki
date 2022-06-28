@@ -367,8 +367,80 @@
 			\end{itemize}
 				
 				
-			\newpage\subsection{\color{green} Paweł \color{red}Model obiektowo-relacyjny baz danych, inne modele danych.}
-				a
+			\newpage\subsection{Model obiektowo-relacyjny baz danych, inne modele danych.}
+			\subsubsection{Model relacyjny}
+			W relacyjnym modelu baz danych informacja jest zapisywana w tabeli w formie wierszy. Tabele tworzą między sobą powiązania zwane relacjami. Dużo dużo więcej jest napisane podrozdział wyżej
+			
+			\subsubsection{Model obiektowy}
+			Model obiektowy łączy cechy programów komputerowych tworzonych w językach programowania obiektowego z cechami aplikacji bazodanowych. Obiekt w bazie reprezentuje obiekt w święcie rzeczywistym. Występują tutaj pojęcia klasa, obiekt, dziedziczenie, hermetyzacja. 
+			\begin{itemize}
+			\itemsep 0em
+			\item oprócz danych dostępne są także operacje na danych
+			\item użytkownik może definiować własne typy danych
+			\item aplikacja oraz BD może być tworzona przy pomocy jednego języka
+			\item aplikacja korzystająca z bazy nie wymaga zmiany modelu relacyjnego na obiektowy
+			\item nie występuje problem z optymalizacją zapytań
+			\item nie występuje ujednolicony standard modelu obiektowego
+			\end{itemize}
+			
+			\subsubsection{Model obiektowo-relacyjny}
+			Model ten łączy koncepcję modelu relacyjnego oraz obiektowego. Jego ideą jest połączenie najlepszych cech obydwu modeli.
+			\begin{itemize}
+				\itemsep 0em
+				\item występują tutaj tabele które mogą mieć pola o typie ATD (Abstract Data Type). Umożliwiają one przechowywanie w bazie np. list, kolejek, drzew - obiektów którym możemy przypisać pewne cechy i zachowanie - mają swoje własne implementacje sortowania, wyszukiwania itp
+				\item przystosowanie do przechowywania multimediów
+				\item ten model zwraca dane jako tabele krotek (jak w bazie relacyjnej), a nie jako kolekcję
+				obiektów
+				\item programista musi zamienić odpowiedź z bazy danych będącą w postaci krotek (jak w
+				relacyjnej) na postać obiektową
+			\end{itemize}
+			
+			\subsubsection{Model hierarchiczny}
+			W tym modelu przechowywane dane są zorganizowane w postaci drzewa. Informacja jest zawarta w dokumentach oraz w strukturze drzewa (podobnej do drzewa folderów na dysku komputera).
+			\begin{figure}[h]
+				\includegraphics[width=10cm]{modelhierarchiczny}
+				\centering
+			\end{figure}
+			\begin{itemize}
+				\itemsep 0em
+				\item dane są przedstawione w postaci drzewa (najłatwiej to porównać do XML)
+				\item informacje są przechowywane w strukturze drzewa
+				\item tabele muszą być zawsze ze sobą powiązane, czyli podrzędne z nadrzędnym (np.
+				uczeń musi być podpięty pod jakąś szkołę)
+				\item usunięcie tabeli nadrzędnej powoduje usunięcie wszystkich tabel podrzędnych
+			\end{itemize}
+			\subsubsection{Model sieciowy}
+			Połączenia między dokumentami tworzą sieć. Informacja jest zawarta w dokumentach oraz w przebiegu połączeń sieci.
+			\begin{figure}[h]
+				\includegraphics[width=10cm]{modelsieciowy}
+				\centering
+			\end{figure}
+			\begin{itemize}
+				\itemsep 0em
+				\item jest to rozwinięcie modelu hierarchicznego gdzie tabele podrzędne mają wiele tabel
+				nadrzędnych (skutkiem czego jest stworzenie grafu/sieci)
+				\item można bezpośrednio odczytywać każdą tabele (nie trzeba przechodzić od korzenia
+				do liścia jak w hierarchicznym)
+				\item relacje/zależności między tabelami są nazywane strukturami
+				\item w strukturze można wyłonić jedną tabelę główną z której to można przejść do tabel
+				podrzędnych
+				\item struktura jest relacja 1:N
+				\item zmiany w bazie są bardzo trudne do wykonania
+			\end{itemize}
+			\subsubsection{Model semistrukturalny}
+			\begin{itemize}
+				\itemsep 0em
+				\item polega na przedstawieniu danych w postaci modelu XML		
+				\item przedstawia on dane w postaci drzewiastej (czyli jest hierarchiczny)
+				\item zapytania są w postaci ścieżki
+				\item atrybuty znacznika przechowywują dodatkowe informacje (cechy)
+				\item dane w postaci XML można łatwo umieścić na stronie WWW (tylko trzeba określić sposób wyświetlania)
+				\item baza w postaci /xML może być łatwo przekonwertowana na obiekt
+			\end{itemize}
+			
+			\subsubsection{Model jednorodny}
+			Wszystkie dane upchane w jednej tabeli, łatwo szukać danych po unikalnej wartości (ale ciężej po czymś nieunikalnym np nazwisko), taka forma posiada dużo duplikatów
+				
 			\newpage\subsection{Składnia podstawowych zapytań języka SQL.}
 				\subsubsection{DDL - Data Definition Language}
 				\noindent Jak zapamiętać skrót: \\ Definition = DEFINIOWANIE - TWORZENIE STRUKTUR \\
