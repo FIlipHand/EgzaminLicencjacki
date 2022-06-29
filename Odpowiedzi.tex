@@ -1267,8 +1267,58 @@ catch(int w)
 				\end{lstlisting}
 		
 		\newpage\section{Algosy}
-			\subsection{\color{red}Algorytmy sortujące.}
-				a
+			\subsection{Algorytmy sortujące.}
+				\begin{enumerate}
+					\item Sortowanie bąbelkowe - polega na porównywaniu par (sąsiednich) elementów. Za
+					każdym przejściem zbioru elementu przynajmniej jeden jest już na swoim miejscu
+					(takie wypychanie na zewnątrz). Złożoność obliczeniowa: $O(n^2)$
+					\item Sortowanie przez wybieranie - polega na przeszukiwaniu zbioru elementów w
+					poszukiwaniu najmniejszego (lub największego elementu). Po znalezieniu
+					minimalnego elementu jest on zamieniany miejscami z elementem na pierwszym
+					miejscu. Kolejny wyszukany element zostanie wstawiony na 2 miejsce, itd. Złożoność
+					obliczeniowa:$O(n^2)$
+					\item Sortowanie przez wstawianie - polega on na tworzeniu zbioru uporządkowanego ze
+					zbioru nieuporządkowanego. Podczas tworzenia zbioru uporządkowanego pobiera
+					się jeden element ze zbioru nieuporządkowanego i przeszukuje się zbiór
+					uporządkowany w celu znalezienia odpowiedniego miejsca dla tego elementu.
+					Można to porównać do sortowania kart do gry w ręce. Złożoność obliczeniowa:$O(n^2)$
+					\item Sortowanie grzebieniowe - podobny do sortowania bąbelkowego lecz
+					porównywane elementy mają między sobą pewien odstęp. Po każdym przejściu
+					algorytmu ten odstęp się zmniejsza aż do uzyskania sortowania bąbelkowego (na
+					początku sortuje “z grubsza”, a na koniec dokładnie). Złożoność obliczeniowa:$O(n^2)$
+					\item Sortowanie Shella - basuje on na sortowaniu przez wstawianie. Ten algorytm dzieli
+					zbiór na podzbiory (podana jest wartość informująca o odstępie między elementami
+					podzbioru) gdzie na każdym z nich wykonywane jest sortowanie przez wstawianie.
+					Za każdym obrotem odstęp się zmniejsza (jaki liczba podzbiorów), aby na końcu
+					mieć już zwykłe sortowanie przez wstawianie. W zależności od odstępów złożoność
+					obliczeniowa jest między:$O(n^2) - O(n\cdot\log n)$
+					\item Quicksort - polega on na wybraniu jednego elementu ze zbioru i podzieleniu całego
+					zbioru na elementy mniejsze od wybranego i większe od wybranego. Na dalszym
+					etapie te same operacje są wykonywane na mniejszym podzbiorze. Działa ten
+					algorytm póki nie będzie jednoelementowych zbiorów. Złożoność obliczeniowa
+					(pesymistyczna): $O(n^2)$. W praktyce złożoność obliczeniowa jest bliska: $O(n\cdot\log n)$
+					\item Mergesort - polega on na podziale zbioru na jednoelementowe zbiory. Podczas
+					łączenia porównuje pierwsze elementy z dwóch zbiorów (bo te zbiory już są
+					uporządkowane) i wybiera z ary odpowiedni. Potem bierze kolejny element ze zbioru
+					i porównuje z drugim. Działa tak dopóki nie nie zostaną opróżnione dwa zbiory i nie
+					powstanie jeden większy zbiór. Działa on na oraz większych zbiorach, aż do
+					całkowitego posortowania pierwotnego zbioru. Złożoność obliczeniowa:$O(n\cdot\log n)$
+					\item Sortowanie kubełkowe - polega na sortowaniu zbiorów o małym zakresie
+					rozpiętości między wartościami skrajnymi. Po znalezieniu wartości skrajnych
+					tworzona jest tablica gdzie indeks tablicy odpowiada wartości, a wartość tablicy ilości
+					występowania elementu w zbiorze. Po przejściu zbioru i zliczeniu elementów
+					uzyskuje się zbiór uporządkowany. Złożoność obliczeniowa: $O(n)$.
+					\item Sortowanie pozycyjne - polega on na sortowaniu wartości według jakiejś pozycji,
+					np. na początku występuje sortowanie według liczb jedności, potem dziesiątek, itd.
+					Ważne jest aby to sortowanie było stabilne czyli nie zamienia miejscami elementów o
+					równej wartości. Złożoność obliczeniowa: O(n*d). Często redukuje się do:$O(n\cdot\log n)$
+					\item Sortowanie przez kopcowanie - polega on na utworzeniu (na początku) ze zbioru
+					elementów struktury kopca. Następnie korzeń kopca jest zamieniany z ostatnim
+					elementem (a sam kopiec jest zmniejszany o 1 element). W tym momencie należy
+					przywrócić strukturę kopca (zamieniając ojca z większym synem dopóki ojciec nie
+					będzie większy od synów). Potem znowu jest usuwany korzeń kopca dzięki czemu
+					na końcu uzyska się zbiór uporządkowany. Złożoność obliczeniowa:$O(n\cdot\log n)$
+				\end{enumerate}
 			\newpage\subsection{\color{red}Algorytmy zachłanne.}
 				a
 			\newpage\subsection{\color{red}Metoda ,,dziel i zwyciężaj'' konstruowania algorytmów.}
