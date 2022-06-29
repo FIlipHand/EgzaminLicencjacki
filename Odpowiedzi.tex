@@ -655,10 +655,46 @@
 			\item \verb*|ROLLBACK TO SAVEPOINT nazwa| – wycofanie transakcji do stanu zapamiętanego w podanym punkcie pośrednim.
 		\end{itemize}
 		\newpage\section{Paradygmaty}
-			\subsection{\color{green} Kacper S \color{red}Założenia paradygmatu programowania obiektowego.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Idea dziedziczenia i polimorfizmu w programowaniu.}
-				a
+			\subsection{Założenia paradygmatu programowania obiektowego.}
+				Paradygmat obiektowy zakłada modułowość, czyli tworzenie programu z wcześniej
+				zdefiniowanych komponentów (np. klasy).
+				
+				Główne założenia paradygmatu programowania obiektowego:
+				\begin{enumerate}
+					\item \textbf{Abstrakcja} - to przedstawienie obiektu ze świata rzeczywistego i jego cech jako
+					uproszczony model/szablon (tutaj klasa i obiekty) wykorzystywany w problemie
+					programistycznym.
+					\item \textbf{Hermetyzacja (enkapsulacja)} - to ukrycie implementacji przed użytkownikiem
+					(prywatne pola - publiczne metody).
+					Cytując kogoś mądrego: “Hermetyzacja polega na tym, że klasy są zamkniętymi
+					"czarnymi skrzynkami" - inne klasy nie muszą wiedzieć dokładnie co się dzieje w
+					środku, mogą wchodzić z nimi w interakcje poprzez elementy, które wystawiają
+					publicznie (publiczne pola i metody)”.
+					\item \textbf{Dziedziczenie} - jest to tworzenie hierarchii klas. Klasa dziedzicząca otrzymuje pola i
+					metody (te może zmieniać) “klasy matki”. Tworzenie bardziej wyspecjalizowanego
+					obiektu z bardziej ogólnego. (np. klasa jabłko dziedziczy cechy po klasie owoc)
+					\item \textbf{Polimorfizm} - polega na dostosowaniu zachowania obiektów do oczekiwań
+					użytkownika. Inaczej mówiąc gdy grupa obiektów dziedziczy metodę od innej klasy.
+					Każda klasa która odziedziczyła tę metodę to ją zmieniła. Wywołanie tej
+					odziedziczonej metody na poszczególnych obiektach wywoła wykonanie instrukcji
+					zaimplementowanych dla każdego obiektu. (np. dla każdej figury funkcja obliczania
+					pola będzie inna)
+				\end{enumerate}
+			\newpage\subsection{Idea dziedziczenia i polimorfizmu w programowaniu.}
+				\subparagraph{Dziedziczenie} - jest to tworzenie hierarchii klas. Klasa dziedzicząca otrzymuje pola i metody
+				(te może zmieniać) “klasy matki”. Tworzenie bardziej wyspecjalizowanego obiektu z bardziej
+				ogólnego. (np. klasa jabłko dziedziczy cechy po klasie owoc).
+				Umożliwia ona większą czytelność kodu który jednocześnie staje się prostszy (bo po co
+				pisać 2 razy to samo)
+				
+				\subparagraph{Polimorfizm} - polega na dostosowaniu zachowania obiektów do oczekiwań użytkownika.
+				Inaczej mówiąc gdy grupa obiektów dziedziczy metodę od innej klasy. Każda klasa która
+				odziedziczyła tę metodę to ją zmieniła. Wywołanie tej odziedziczonej metody na
+				poszczególnych obiektach wywoła wykonanie instrukcji zaimplementowanych dla każdego
+				obiektu. (np. dla każdej figury funkcja obliczania pola będzie inna)
+				
+				Polimorfizm umożliwia nie tylko wykonywanie odpowiednio metod dla obiektów pochodnych
+				ale również przypisanie do bardziej ogólnego typu danych (np. Owoc jablko= new Jablko(); )
 			\newpage\subsection{Zasady programowania dynamicznego.}
 				\subparagraph{Programowanie dynamiczne} - jest to rozszerzenie strategii "dziel i zwyciężaj". „Programowanie” oznacza w tym
 				kontekście tabelaryczną metodę rozwiązywania problemów, a nie pisanie programów komputerowych. Wiemy, że w algorytmach typu „dziel i zwyciężaj” dzieli się problem na niezależne podproblemy, rozwiązuje je rekurencyjnie, a następnie łączy się rozwiązania
@@ -723,8 +759,30 @@
 				
 				Język programowania w logice (a ściślej — jego interpreter) to właściwie system automatycznego dowodzenia twierdzeń, działający w oparciu o nieco uproszczony rachunek predykatów. Kluczowym pojęciem jest tu rezolucja, realizowana m.in. przy pomocy unifikacji i nawrotów. Zastosowania programowania w logice obejmują przede wszystkim sztuczną inteligencję (np. systemy ekspertowe, rozpoznawanie obrazów) i przetwarzanie języka naturalnego. Językiem, który uzyskał największą popularność, jest Prolog. Historycznie ważny jest również Planner — wcześniejszy i bardziej złożony od Prologu.
 				
-			\newpage\subsection{\color{green} Kacper S \color{red}Cechy programowania deklaratywnego.}
-				a
+
+			\newpage\subsection{Cechy programowania deklaratywnego.}
+				W programowaniu deklaratywnym programista deklaruje mając jakiś element co chce z
+				niego uzyskać (nie jest mówione jak to ma zostać wykonane, tylko jest mówione jaki ma być
+				efekt).
+				
+				Cechy:
+				\begin{itemize}
+					\item wzorowany na językach naturalnych
+					\item nieliniowe wykonanie (komenda końcowa może modyfikować początek)
+					\item bardzo częste wykonywanie rekurencji zamiast pętli
+					\item definiuje problem i szuka odpowiedź na zadane pytanie
+				\end{itemize}
+			
+				Do programowania deklaratywnego zalicza się:
+				\begin{itemize}
+					\item języki funkcyjne - zamiast instrukcji używa się funkcji (cały program to funkcja).
+					Przykładem jest Haskell w którym Wszystko opiera się na wyrażeniach Lambda. W
+					tym języku funkcje są sobie równe jeśli dają takie same odpowiedzi.
+					\item języki w logice - zamiast instrukcji używa się zdań logicznych. np. w Prologu zdania
+					logiczne na początku opisują zależności (między elementami) aby na końcu zapytać
+					czy podane zdanie jest prawdziwe (oczywiście trzeba na koniec podać to zdanie).
+					Tutaj wszystko jest wyrażeniem logicznym
+				\end{itemize}
 	
 	\chapter{Pytania - reszta}
 	
