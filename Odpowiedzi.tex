@@ -288,9 +288,9 @@
 				
 			\newpage\subsection{\color{red}Bezpieczeństwo sieci w odniesieniu do warstw modelu TCP/IP.}
 				a
-			\newpage\subsection{\color{red}Metody kontroli dostępu w systemach IT.}
+			\newpage\subsection{\color{green} Kacper S \color{red}Metody kontroli dostępu w systemach IT.}
 				a
-			\newpage\subsection{\color{red}Atrybuty bezpieczeństwa informacji.}
+			\newpage\subsection{\color{green} Kacper S \color{red}Atrybuty bezpieczeństwa informacji.}
 				a
 	
 	\chapter{Pytania - dr. hab. Grzegorz Wójcik}
@@ -539,12 +539,38 @@
 			\item \verb*|ROLLBACK TO SAVEPOINT nazwa| – wycofanie transakcji do stanu zapamiętanego w podanym punkcie pośrednim.
 		\end{itemize}
 		\newpage\section{Paradygmaty}
-			\subsection{\color{red}Założenia paradygmatu programowania obiektowego.}
+			\subsection{\color{green} Kacper S \color{red}Założenia paradygmatu programowania obiektowego.}
 				a
-			\newpage\subsection{\color{red}Idea dziedziczenia i polimorfizmu w programowaniu.}
+			\newpage\subsection{\color{green} Kacper S \color{red}Idea dziedziczenia i polimorfizmu w programowaniu.}
 				a
-			\newpage\subsection{\color{red}Zasady programowania dynamicznego.}
-				a
+			\newpage\subsection{Zasady programowania dynamicznego.}
+				\subparagraph{Programowanie dynamiczne} - jest to rozszerzenie strategii "dziel i zwyciężaj". „Programowanie” oznacza w tym
+				kontekście tabelaryczną metodę rozwiązywania problemów, a nie pisanie programów komputerowych. Wiemy, że w algorytmach typu „dziel i zwyciężaj” dzieli się problem na niezależne podproblemy, rozwiązuje je rekurencyjnie, a następnie łączy się rozwiązania
+				wszystkich podproblemów w celu utworzenia rozwiązania pierwotnego problemu. Programowanie dynamiczne można stosować wtedy, kiedy podproblemy nie są niezależne, tzn. kiedy podproblemy mogą zawierać te same podpodproblemy. Wtedy algorytm typu „dziel i zwyciężaj” wykonuje więcej pracy niż to w istocie jest konieczne, wielokrotnie
+				bowiem rozwiązuje ten sam podproblem. \\
+				
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{problem_dynam.png}
+					\caption{Przykładowy problem złożony}
+				\end{figure}
+			
+				Jak widać na obrazku wyżej chcąc obliczyć rozwiązania problemów P1 i P2 rozwiązaniem typu "dziel i zwyciężaj", problem P4 zostałby policzony 2 razy jako problem zależny. Programowanie dynamiczne ma na celu optymalizację takich przypadków i pisząc program zapamiętalibyśmy rozwiązanie P4 gdy liczymy P1. Nastepnie obliczając drugi głowny problem - P2, znamy już rozwiązanie P4 więc nie marnujemy czasu i mocy obliczeniowej.\\
+				
+				\textbf{Proces projektowania algorytmu} opartego na programowaniu dynamicznym można podzielić na cztery etapy: 
+				\begin{enumerate}
+					\item Scharakteryzowanie struktury optymalnego rozwiązania. 
+					\item Rekurencyjne zdefiniowanie kosztu optymalnego rozwiązania.
+					\item Obliczenie optymalnego kosztu metodą wstępującą (ang. bottom-up) – czyli rozpoczynając od najmniejszych podproblemów, rozwiązywać coraz większe, wykorzystując zapamiętane rozwiązania mniejszych.
+					\item Konstruowanie optymalnego rozwiązania na podstawie wyników wcześniejszych obliczeń. 
+				\end{enumerate}
+			
+				\textbf{Zasady} paradygmatu programowania dynamicznego (pretty much to samo co proces projektowania) to:
+				\begin{itemize}
+					\item Scharakteryzować strukturę rozwiązania optymalnego.
+					\item Zdefiniować rekurencyjnie wartość rozwiązania optymalnego, jako funkcję rozwiązań optymalnych dla podproblemów.
+					\item Skonstruować optymalne rozwiązanie problemu na bazie wyliczonych wcześniej wielkości.
+				\end{itemize}
+			
 			\newpage\subsection{Główne paradygmaty programowania.}
 				\subparagraph{Paradygmat programowania} - jest to wzorzec sposobu programowania, patrzenia na dane,
 				przepływ danych oraz sposób wykonywania programu.
@@ -581,7 +607,7 @@
 				
 				Język programowania w logice (a ściślej — jego interpreter) to właściwie system automatycznego dowodzenia twierdzeń, działający w oparciu o nieco uproszczony rachunek predykatów. Kluczowym pojęciem jest tu rezolucja, realizowana m.in. przy pomocy unifikacji i nawrotów. Zastosowania programowania w logice obejmują przede wszystkim sztuczną inteligencję (np. systemy ekspertowe, rozpoznawanie obrazów) i przetwarzanie języka naturalnego. Językiem, który uzyskał największą popularność, jest Prolog. Historycznie ważny jest również Planner — wcześniejszy i bardziej złożony od Prologu.
 				
-			\newpage\subsection{\color{red}Cechy programowania deklaratywnego.}
+			\newpage\subsection{\color{green} Kacper S \color{red}Cechy programowania deklaratywnego.}
 				a
 	
 	\chapter{Pytania - reszta}
