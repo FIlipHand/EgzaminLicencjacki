@@ -416,8 +416,41 @@
 						np. Cookie: sessionid=el4ukv0kqbvoirg7nkp4dncpk3\&user=admin
 					\end{itemize}
 				\end{itemize}
-			\newpage\subsection{\color{red}Protokół WebSocket.}
-				a
+			\newpage\subsection{Protokół WebSocket.}
+				\subparagraph{WebSocket} – jest protokołem komunikacyjnym, zapewniającym dwukierunkowy kanał wymiany danych poprzez pojedyncze połączenie TCP. WebSockets różni się od protokołu HTTP. Oba protokoły są zlokalizowane na 7 warstwie w modelu OSI i zależą od TCP na warstwie 4. Pomimo faktu, że są one różne, standard RFC 6455 mówi, że WebSocket został zaprojektowany do działana na portach 80 i 443 przypisanych do HTTP, a także wspierać funkcje proxy i pośredników (intermediaries). Aby osiągnąć kompatybilność z HTTP, handshake WebSocket’u wykorzystuje nagłówek HTTP Upgrade[2], aby przełączyć komunikację z protokołu HTTP na WebSockets.
+				
+				Aby ustanowić połączenie typu WebSocket, klient musi najpierw wysłać żądanie typu handshake, dla którego serwer zwraca odpowiednią odpowiedź, jak pokazane jest to w przykładzie poniżej.
+				
+				Zarówno w żądaniu klienta, jak i odpowiedzi serwera każda linia wiadomości kończy się znakiem nowej linii (\textbackslash r \textbackslash n) – identycznie jak ma to miejsce w przypadku protokołu HTTP. Dodatkowo na samym końcu żądania/odpowiedzi musi znajdować się pusta linia.
+				
+				Żądanie klienta:
+				\begin{lstlisting}[language=]
+GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com
+				\end{lstlisting}
+			
+			Odpowiedź serwera:
+			\begin{lstlisting}[language=]
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+Sec-WebSocket-Protocol: chat
+			\end{lstlisting}
+		
+			Handshake rozpoczyna się od żądania/odpowiedzi HTTP, dzięki czemu dany serwer może obsługiwać połączenia HTTP, a także WebSocket na tym samym porcie. Po nawiązaniu połączenia komunikacja przełącza się na dwukierunkowy protokół binarny, który nie jest już zgodny z protokołem HTTP.
+			
+			Oprócz nagłówka Upgrade klient wysyła również nagłówek Sec-WebSocket-Key zawierający losowe bajty zakodowane w standardzie base64, na co serwer odpowiada, podając hash tego klucza w nagłówku Sec-WebSocket-Accept. Ma to na celu zapobieganie sytuacji, gdzie np. serwer/proxy buforujący wyśle ponownie całą zapisaną konwersację innemu klientowi, podczas gdy ten nie miał de facto styczności z właściwym serwerem. Proces polega na tym, że funkcja szyfrująca dodaje stały ciąg znaków 258EAFA5-E914-47DA-95CA-C5AB0DC85B11 do wartości podanej w nagłówku Sec-WebSocket-Key klienta (nie jest on dekodowany z base64), a następnie stosuje algorytm szyfrujący SHA-1, by na samym końcu zakodować uzyskaną wartość używając base64.
+			
+			Gdy połączenie jest już ustanowione, klient i serwer mogą wysyłać sobie dane w formie binarnej lub tekstowej w postaci tzw. ramek w trybie pełnego dupleksu. Sama ramka ma niewielki narzut, dodając jedynie mały nagłówek po którym znajdują się docelowe dane. Transmisje WebSocket są opisywane jako „wiadomości”, w których pojedyncza wiadomość może być opcjonalnie podzielona na kilka ramek. Pozwala to na wysyłanie wiadomości, w których dostępne są dane początkowe, ale nie jest znana pełna długość wiadomości (wysyła są jedna ramka danych za drugą, aż do osiągnięcia końca i zakończenia bitem FIN). Dzięki rozszerzeniom protokołu można to również wykorzystać do multipleksowania kilku strumieni jednocześnie (na przykład w celu uniknięcia monopolizowania użycia gniazda dla pojedynczego dużego ładunku).
+		
+		
 			\newpage\subsection{\color{red}Serwer zdarzeniowy, a wielowątkowy. Charakterystyka i porównanie.}
 				a
 		
