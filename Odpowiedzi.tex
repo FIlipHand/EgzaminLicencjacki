@@ -655,8 +655,31 @@
 			\item \verb*|ROLLBACK TO SAVEPOINT nazwa| – wycofanie transakcji do stanu zapamiętanego w podanym punkcie pośrednim.
 		\end{itemize}
 		\newpage\section{Paradygmaty}
-			\subsection{\color{red}Założenia paradygmatu programowania obiektowego.}
-				a
+			\subsection{Założenia paradygmatu programowania obiektowego.}
+				Paradygmat obiektowy zakłada modułowość, czyli tworzenie programu z wcześniej
+				zdefiniowanych komponentów (np. klasy).
+				
+				Główne założenia paradygmatu programowania obiektowego:
+				\begin{enumerate}
+					\item \textbf{Abstrakcja} - to przedstawienie obiektu ze świata rzeczywistego i jego cech jako
+					uproszczony model/szablon (tutaj klasa i obiekty) wykorzystywany w problemie
+					programistycznym.
+					\item \textbf{Hermetyzacja (enkapsulacja)} - to ukrycie implementacji przed użytkownikiem
+					(prywatne pola - publiczne metody).
+					Cytując kogoś mądrego: “Hermetyzacja polega na tym, że klasy są zamkniętymi
+					"czarnymi skrzynkami" - inne klasy nie muszą wiedzieć dokładnie co się dzieje w
+					środku, mogą wchodzić z nimi w interakcje poprzez elementy, które wystawiają
+					publicznie (publiczne pola i metody)”.
+					\item \textbf{Dziedziczenie} - jest to tworzenie hierarchii klas. Klasa dziedzicząca otrzymuje pola i
+					metody (te może zmieniać) “klasy matki”. Tworzenie bardziej wyspecjalizowanego
+					obiektu z bardziej ogólnego. (np. klasa jabłko dziedziczy cechy po klasie owoc)
+					\item \textbf{Polimorfizm} - polega na dostosowaniu zachowania obiektów do oczekiwań
+					użytkownika. Inaczej mówiąc gdy grupa obiektów dziedziczy metodę od innej klasy.
+					Każda klasa która odziedziczyła tę metodę to ją zmieniła. Wywołanie tej
+					odziedziczonej metody na poszczególnych obiektach wywoła wykonanie instrukcji
+					zaimplementowanych dla każdego obiektu. (np. dla każdej figury funkcja obliczania
+					pola będzie inna)
+				\end{enumerate}
 			\newpage\subsection{\color{red}Idea dziedziczenia i polimorfizmu w programowaniu.}
 				a
 			\newpage\subsection{\color{red}Zasady programowania dynamicznego.}
