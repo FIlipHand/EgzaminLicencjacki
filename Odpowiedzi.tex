@@ -227,8 +227,43 @@
 					\centering\includegraphics[scale=0.45]{ramka-ethernet.png}
 					\caption{Ramka Ethernet}
 				\end{figure}
-			\newpage\subsection{\color{green} Rafał \color{red}Protokoły warstwy aplikacji.}
-				a
+			\newpage\subsection{Protokoły warstwy aplikacji.}
+				Najważniejsze protokoły z warstwy aplikacji:
+				\begin{itemize}
+					\item DNS (Domain Name System; port: 53) - protokół do uzyskiwania adresów IP z nazw
+					domenowych (czyli zamiana google.com na 32.194.195.90)
+					\item HTTP (HyperText Transfer Protocol; port: 80) - protokół przesyłania dokumentów
+					hipertekstowych - czyli pliki HTML i dołączone do nich zasoby (obrazki, pliki do
+					pobrania, formularze, itd.)
+					\item HTTPS (HyperText Transfer Protocol Secure; port: 443) - szyfrowana wersja
+					protokołu HTTP przy wykorzystaniu SSL/TLS
+					\item SMTP (Simple Mail Transfer Protocol; port 25) - protokół do wysyłania wiadomości
+					E-mail i załączników
+					\item POP3 (Post Office Protocol; port 110) - protokół do odbierania poczty E-mail. Klient
+					poczty pobiera całe wiadomości z serwera pocztowego (i od razu stamtąd usuwa).
+					\item IMAP (Internet Message Access Protocol; port: 143) - protokół do odbierania poczty
+					E-mail. Klient poczty pobiera nagłówki wiadomości z serwera pocztowego, a
+					wiadomość jest pobierana gdy użytkownik będzie chciał otworzyć tą wiadomość.
+					Wymaga stałego dostępu do internetu lecz umożliwia dostęp do poczty z wielu
+					urządzeń
+					\item Telnet (Telecommunication Network; port: 23) - protokół który emuluje środowisko
+					terminala w celu komunikacji ze zdalnym urządzeniem (np. wysłanie E-mail)
+					\item FTP (File Transfer Protocol; porty: 20, 21) - jest to protokół (typu klient-serwer) do
+					przesyłania plików
+					\item DHCP (Dynamic Host Configuration Protocol; port: 67) - protokół do dynamicznej
+					konfiguracji urządzeń (przydziela: adres IP, adres bramy domyślnej, adresy
+					serwerów DNS)
+					\item SSH (Secure Shell; port: 22) - protokół który emuluje środowisko terminala w celu
+					komunikacji ze zdalnym urządzeniem wraz z zapewnieniem szyfrowania (następca
+					Telnet)
+					\item NFS (Network File System; port: 2049) - protokół który udostępnia dyski sieciowe
+					(system plików). Chodzi o to że komputery nie mają dysków twardych, a wszystkie
+					dane sa na serwerze.
+					\item SNMP (Simple, Network Management Protocol; port: 161) - protokół który służy do
+					konfiguracji sieci, zbierania informacji o sieci oraz do zarządzania siecią
+					\item SMB (Server Message Block; porty: 137, 138, 139, 445) - protokół do udostępniania
+					zasobów (np. pliki, skanery, drukarki lub nawet zdalne korzystanie z kart graficznych)
+				\end{itemize}
 			\newpage\subsection{Charakterystyka modelu OSI i TCP/IP.}
 			\label{model}
 				\begin{figure}[h!]
