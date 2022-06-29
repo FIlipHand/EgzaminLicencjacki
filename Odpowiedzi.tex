@@ -17,6 +17,8 @@
 \contourlength{1.4pt}
 \usepackage[margin=1in]{geometry}
 \usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
 
 
 \tikzset{>=latex} % for LaTeX arrow head
@@ -140,10 +142,42 @@
 				\item Geocast - dane są wysyłane do wielu wybranych hostów należących do jednej strefy
 				geograficznej
 			\end{enumerate}
-			\newpage\subsection{\color{green} Rafał \color{red}Modele sieci komputerowych.}
-				a
-			\newpage\subsection{\color{green} Rafał \color{red}Porównanie protokołów IPv4 i IPv6.}
-				a
+			\newpage\subsection{Modele sieci komputerowych.}
+				Patrz pytanie \ref{model}.
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{najman.jpg}
+					\caption{najman.jpg}
+				\end{figure}
+			\newpage\subsection{Porównanie protokołów IPv4 i IPv6.}
+				\begin{table}[h!]
+					\centering
+					\renewcommand*{\arraystretch}{2}
+					\resizebox{\textwidth}{!}{%
+						\begin{tabularx}{\linewidth}{>{\hsize=.5\hsize}X X X}
+							\toprule
+							& IPv4                             & IPv6                                                                   \\ \midrule
+							Adres                               & 32 bity (4 bajty)                & 128 bitów (16 bajtów)                                                  \\
+							Zapis adresu &
+							nnn.nnn.nnn.nnn , gdzie nnn reprezentuje oktet (bajt) i może być liczbą w systemie dziesiętnym &
+							xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxx x , gdzie x jest liczbą w systemie szesnastkowym \\
+							Bity poświęcone na sieć i na hosta  & A - 8:24, B - 16:16, C - 24:8    & 64:64                                                                  \\
+							Długość nagłówka                    & 20 bajtów                        & 40 bajtów                                                              \\
+							Pole "suma kontrolna"               & Jest (wymagany)                  & Brak (zamiast tego pola jest błąd)                                     \\
+							IPSec (w kontekście bezpieczeństwa) & Opcjonalne                       & Obowiązkowy                                                            \\
+							Identyfikacja przepływu danych &
+							Brak (czyli brak QoS {[}jakość usług{]}) &
+							Występuje, a wykryty przepływ jest przekazywany na router \\
+							Fragmentacja                        & Wykonywana przez hosta i routery & Wykonywana przez hosty                                                 \\
+							Konfiguracja adresów                & Manualna lub DHCP                & SLAACK wykorzystujący ICMPv6 lub DHCPv6                                \\
+							Uzyskiwanie MAC z IP &
+							Zapytanie ARP na Broadcast &
+							Wysyłanie zapytania Multicast Neighbor Solicitation (to taki rodzaj zapytania multicast do sąsiadów) \\
+							Broadcast                           & Tak                              & Nie (występuje tutaj adres “link-local” który może zastąpić broadcast) \\
+							Multicast                           & Tak                              & Tak                                                                    \\ \bottomrule
+						\end{tabularx}%
+					}
+					\label{tab:my-table}
+				\end{table}
 			\newpage\subsection{Format pakietu IP (poszczególne pola, zastosowanie).}
 				\begin{figure}[h!]
 					\centering\includegraphics[scale=0.65]{ip-datagram.jpg}
@@ -162,11 +196,76 @@
 					\item[Suma kontrolna nagłówka] – gdy odbiorca dostanie pakiet, sprawdza jego poprawność obliczając sumę kontrolną i porównując ją z sumą kontrolną zapisaną w nagłówku
 					\item[Adres źródłowy i adres docelowy ] – zawierają adresy IP urządzeń które przesyłają między sobie dane zapisane w formacie binarnym
 				\end{description}
-			\newpage\subsection{\color{green} Rafał \color{red}Ethernet.}
-				a
-			\newpage\subsection{\color{green} Rafał \color{red}Protokoły warstwy aplikacji.}
-				a
+			\newpage\subsection{Ethernet.}
+				\subparagraph{Ethernet} - jest to standard wykorzystywany (głównie) do budowy sieci lokalnych LAN
+				(należy pamiętać że Ethernet jest najpopularniejszy. Jest jeszcze np. Token Ring, FDDI)
+				Opisuje on sposób reprezentacji danych w postaci ramek, które są przesyłane przez
+				warstwę fizyczną (czyli przez kable sygnałami 0 i 1)
+				
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{ethernet.png}
+					\caption{Schemat sieci ethernet}
+				\end{figure}
+				
+				Klasyczne cechy charakteryzujące sieć Ethernet:
+				\begin{itemize}
+					\item parametry czasowe
+					\item format ramki
+					\item proces transmisji
+					\item podstawowe zasady podczas tworzenia sieci Ethernet
+				\end{itemize}
+			
+				Zalety Ethernet::
+				\begin{itemize}
+					\item łatwy w implementacji
+					\item niski koszt implementacji
+					\item niezawodność
+					\item zdolny do przyjmowania nowych technologii
+				\end{itemize}
+			
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{ramka-ethernet.png}
+					\caption{Ramka Ethernet}
+				\end{figure}
+			\newpage\subsection{Protokoły warstwy aplikacji.}
+				Najważniejsze protokoły z warstwy aplikacji:
+				\begin{itemize}
+					\item DNS (Domain Name System; port: 53) - protokół do uzyskiwania adresów IP z nazw
+					domenowych (czyli zamiana google.com na 32.194.195.90)
+					\item HTTP (HyperText Transfer Protocol; port: 80) - protokół przesyłania dokumentów
+					hipertekstowych - czyli pliki HTML i dołączone do nich zasoby (obrazki, pliki do
+					pobrania, formularze, itd.)
+					\item HTTPS (HyperText Transfer Protocol Secure; port: 443) - szyfrowana wersja
+					protokołu HTTP przy wykorzystaniu SSL/TLS
+					\item SMTP (Simple Mail Transfer Protocol; port 25) - protokół do wysyłania wiadomości
+					E-mail i załączników
+					\item POP3 (Post Office Protocol; port 110) - protokół do odbierania poczty E-mail. Klient
+					poczty pobiera całe wiadomości z serwera pocztowego (i od razu stamtąd usuwa).
+					\item IMAP (Internet Message Access Protocol; port: 143) - protokół do odbierania poczty
+					E-mail. Klient poczty pobiera nagłówki wiadomości z serwera pocztowego, a
+					wiadomość jest pobierana gdy użytkownik będzie chciał otworzyć tą wiadomość.
+					Wymaga stałego dostępu do internetu lecz umożliwia dostęp do poczty z wielu
+					urządzeń
+					\item Telnet (Telecommunication Network; port: 23) - protokół który emuluje środowisko
+					terminala w celu komunikacji ze zdalnym urządzeniem (np. wysłanie E-mail)
+					\item FTP (File Transfer Protocol; porty: 20, 21) - jest to protokół (typu klient-serwer) do
+					przesyłania plików
+					\item DHCP (Dynamic Host Configuration Protocol; port: 67) - protokół do dynamicznej
+					konfiguracji urządzeń (przydziela: adres IP, adres bramy domyślnej, adresy
+					serwerów DNS)
+					\item SSH (Secure Shell; port: 22) - protokół który emuluje środowisko terminala w celu
+					komunikacji ze zdalnym urządzeniem wraz z zapewnieniem szyfrowania (następca
+					Telnet)
+					\item NFS (Network File System; port: 2049) - protokół który udostępnia dyski sieciowe
+					(system plików). Chodzi o to że komputery nie mają dysków twardych, a wszystkie
+					dane sa na serwerze.
+					\item SNMP (Simple, Network Management Protocol; port: 161) - protokół który służy do
+					konfiguracji sieci, zbierania informacji o sieci oraz do zarządzania siecią
+					\item SMB (Server Message Block; porty: 137, 138, 139, 445) - protokół do udostępniania
+					zasobów (np. pliki, skanery, drukarki lub nawet zdalne korzystanie z kart graficznych)
+				\end{itemize}
 			\newpage\subsection{Charakterystyka modelu OSI i TCP/IP.}
+			\label{model}
 				\begin{figure}[h!]
 					\centering\includegraphics[scale=0.45]{osi-tcp.png}
 					\caption{OSI - TCP/IP}
@@ -233,8 +332,90 @@
 				Odpowiada ona warstwie sesji, prezentacji i aplikacji z modelu OSI.
 			\end{enumerate}
 			
-			\newpage\subsection{\color{green} Rafał \color{red}Rodzaje i przykłady nagłówków HTTP.}
-				a
+			\newpage\subsection{Rodzaje i przykłady nagłówków HTTP.}
+				Nagłówki - to informacja niosąca dodatkową treść przesyłana w zapytaniach oraz
+				odpowiedziach. Są one oddzielone między sobą symbolem”\textbackslash r\textbackslash n”.
+				
+				Najpopularniejsze nagłówki:
+				\begin{itemize}
+					\item Host - identyfikuje aplikację której dotyczy to zapytanie (pod jednym IP jakiegoś
+					serwera może być wiele aplikacji i należy to doprecyzować)
+					
+					Przykład: Host: httpbin.org
+					\item User-Agent - zawiera informacje o kliencie użytkownika (np. przeglądarka i jej
+					wersja). Może to być istotna informacja do wygenerowania odpowiedzi.
+					
+					Przykład: User-Agent: Mozilla/5.0 (X11; U; Linux i686; pl-PL; rv:1.7.10) Gecko/20050717 Firefox/1.0.6
+					\item Connection - w zapytaniu informuje serwer co on powinien zrobić po wysłaniu
+					odpowiedzi (np. “close” - zamknij po wysłaniu odpowiedzi; “keep-alive” - utrzymaj
+					połączenie i czekaj na kolejne zapytania)
+					
+					Przykład: Connection: keep-alive
+					\item Podstawowe nagłówki odpowiedzi:
+					\begin{itemize}
+						\item Date - aktualna data serwera np. Date: Tue, 15 Nov 1994 08:12:31 GMT
+						\item Server - nazwa serwera, (czasem i wersja) np. Server: Apache/2.4.1 (Unix)
+						\item Expires - data po której dane na stronie będą nieaktualne i będą wymagały
+						odświeżenia (jak expires jest za godzinę to przeglądarka wie, że przez
+						najbliższą godzinę nie trzeba znowu wysyłać żądania, można załadować
+						wersję strony z dysku) 
+						
+						np. Expires: Thu, 01 Dec 1994 16:00:00 GMT
+						\item Last-Modified - data ostatniej modyfikacji 
+						
+						np.	Last-Modified: Tue, 15 Nov 1994 12:45:26 GMT
+					\end{itemize}
+					\item Nagłówki danych - określają typ oraz kodowanie danych. Zaczynają się one od
+					wyrażenia Content
+						\begin{itemize}
+							\item Content-Type - określa typ danych i ich kodowanie 
+							
+							np. text/html; charset=ISO-8859-2
+							\item Content-Encoding - określa dodatkowe kodowanie danych które je
+							modyfikuje (np. kompresja) 
+							
+							np. Content-Encoding: gzip
+							\item Content-Language - określa język dokumentu 
+							
+							np. Content-language: en, pl
+							\item Content-Length - określa rozmiar przesyłanych danych (nie licząc
+							nagłówków) 
+							
+							np. Content-Length: 30
+						\end{itemize}
+					\item Nagłówki negocjacji - służą do informowania serwera jaki format kodowania
+					akceptuje klient np. gdu klient nie obsługuje gzip to jak serwer wyśle dane w tym
+					formacie to są one bezużyteczne.
+					
+					\begin{itemize}
+						\item Accept - służy do informowania serwera jakie typy danych obsługuje klient
+						np. Accept: application/xhtml+xml, application/xml, text/xml;q=0.7,
+						text/html;q=0.5, text/plain;q=0.3
+						Można dodać priorytet (czyli takie które najlepiej pasuje klientowi)
+						\item Accept-Charset - informuje o preferowanych przez klienta formatów
+						kodowania np. Accept-Charset: utf-8, iso-8859-13;q=0.8
+						Można dodać priorytet.
+						\item Accept-Encoding - informuje o obsługiwanych przez klienta dodatkowych
+						kodowaniach np. Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0
+						Można dodać priorytet.
+					\end{itemize}
+					\item Nagłówki warunkowe - informuje serwer aby on przesłał dane jeśli jest spełniony
+					warunek poprzedzony wyrażeniem “if”
+					\begin{itemize}
+						\item If-Modified-Since - zwróci odpowiedź jeśli zasób został zmodyfikowany od
+						konkretnej daty np. If-Modified-Since: Sat, 29 Jan 2017 19:43:31
+						\item If-Unmodified-Since - serwer odpowie jeśli zasób nie został zmodyfikowany
+						od konkretnej daty np. If-Unmodified-Since : Sat, 29 Jan 2017 19:43:31
+					\end{itemize}
+					\item Nagłówki ciasteczek - służą one do tworzenia i obsługi ciasteczek. ciasteczka są to
+					informacje dla serwera przechowywane u klienta
+					\begin{itemize}
+						\item Set-Cookie - jest on zawarty w odpowiedzi serwera (może zawierać np. ID
+						sesji) np. Set-Cookie: sessionid=el4ukv0kqbvoirg7nkp4dncpk3\&user=admin
+						\item Cookie - jest to nagłówek wysyłany podczas żądania wysyłającą ciasteczko
+						np. Cookie: sessionid=el4ukv0kqbvoirg7nkp4dncpk3\&user=admin
+					\end{itemize}
+				\end{itemize}
 			\newpage\subsection{\color{red}Protokół WebSocket.}
 				a
 			\newpage\subsection{\color{red}Serwer zdarzeniowy, a wielowątkowy. Charakterystyka i porównanie.}
