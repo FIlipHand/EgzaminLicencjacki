@@ -332,8 +332,90 @@
 				Odpowiada ona warstwie sesji, prezentacji i aplikacji z modelu OSI.
 			\end{enumerate}
 			
-			\newpage\subsection{\color{green} Rafał \color{red}Rodzaje i przykłady nagłówków HTTP.}
-				a
+			\newpage\subsection{Rodzaje i przykłady nagłówków HTTP.}
+				Nagłówki - to informacja niosąca dodatkową treść przesyłana w zapytaniach oraz
+				odpowiedziach. Są one oddzielone między sobą symbolem”\textbackslash r\textbackslash n”.
+				
+				Najpopularniejsze nagłówki:
+				\begin{itemize}
+					\item Host - identyfikuje aplikację której dotyczy to zapytanie (pod jednym IP jakiegoś
+					serwera może być wiele aplikacji i należy to doprecyzować)
+					
+					Przykład: Host: httpbin.org
+					\item User-Agent - zawiera informacje o kliencie użytkownika (np. przeglądarka i jej
+					wersja). Może to być istotna informacja do wygenerowania odpowiedzi.
+					
+					Przykład: User-Agent: Mozilla/5.0 (X11; U; Linux i686; pl-PL; rv:1.7.10) Gecko/20050717 Firefox/1.0.6
+					\item Connection - w zapytaniu informuje serwer co on powinien zrobić po wysłaniu
+					odpowiedzi (np. “close” - zamknij po wysłaniu odpowiedzi; “keep-alive” - utrzymaj
+					połączenie i czekaj na kolejne zapytania)
+					
+					Przykład: Connection: keep-alive
+					\item Podstawowe nagłówki odpowiedzi:
+					\begin{itemize}
+						\item Date - aktualna data serwera np. Date: Tue, 15 Nov 1994 08:12:31 GMT
+						\item Server - nazwa serwera, (czasem i wersja) np. Server: Apache/2.4.1 (Unix)
+						\item Expires - data po której dane na stronie będą nieaktualne i będą wymagały
+						odświeżenia (jak expires jest za godzinę to przeglądarka wie, że przez
+						najbliższą godzinę nie trzeba znowu wysyłać żądania, można załadować
+						wersję strony z dysku) 
+						
+						np. Expires: Thu, 01 Dec 1994 16:00:00 GMT
+						\item Last-Modified - data ostatniej modyfikacji 
+						
+						np.	Last-Modified: Tue, 15 Nov 1994 12:45:26 GMT
+					\end{itemize}
+					\item Nagłówki danych - określają typ oraz kodowanie danych. Zaczynają się one od
+					wyrażenia Content
+						\begin{itemize}
+							\item Content-Type - określa typ danych i ich kodowanie 
+							
+							np. text/html; charset=ISO-8859-2
+							\item Content-Encoding - określa dodatkowe kodowanie danych które je
+							modyfikuje (np. kompresja) 
+							
+							np. Content-Encoding: gzip
+							\item Content-Language - określa język dokumentu 
+							
+							np. Content-language: en, pl
+							\item Content-Length - określa rozmiar przesyłanych danych (nie licząc
+							nagłówków) 
+							
+							np. Content-Length: 30
+						\end{itemize}
+					\item Nagłówki negocjacji - służą do informowania serwera jaki format kodowania
+					akceptuje klient np. gdu klient nie obsługuje gzip to jak serwer wyśle dane w tym
+					formacie to są one bezużyteczne.
+					
+					\begin{itemize}
+						\item Accept - służy do informowania serwera jakie typy danych obsługuje klient
+						np. Accept: application/xhtml+xml, application/xml, text/xml;q=0.7,
+						text/html;q=0.5, text/plain;q=0.3
+						Można dodać priorytet (czyli takie które najlepiej pasuje klientowi)
+						\item Accept-Charset - informuje o preferowanych przez klienta formatów
+						kodowania np. Accept-Charset: utf-8, iso-8859-13;q=0.8
+						Można dodać priorytet.
+						\item Accept-Encoding - informuje o obsługiwanych przez klienta dodatkowych
+						kodowaniach np. Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0
+						Można dodać priorytet.
+					\end{itemize}
+					\item Nagłówki warunkowe - informuje serwer aby on przesłał dane jeśli jest spełniony
+					warunek poprzedzony wyrażeniem “if”
+					\begin{itemize}
+						\item If-Modified-Since - zwróci odpowiedź jeśli zasób został zmodyfikowany od
+						konkretnej daty np. If-Modified-Since: Sat, 29 Jan 2017 19:43:31
+						\item If-Unmodified-Since - serwer odpowie jeśli zasób nie został zmodyfikowany
+						od konkretnej daty np. If-Unmodified-Since : Sat, 29 Jan 2017 19:43:31
+					\end{itemize}
+					\item Nagłówki ciasteczek - służą one do tworzenia i obsługi ciasteczek. ciasteczka są to
+					informacje dla serwera przechowywane u klienta
+					\begin{itemize}
+						\item Set-Cookie - jest on zawarty w odpowiedzi serwera (może zawierać np. ID
+						sesji) np. Set-Cookie: sessionid=el4ukv0kqbvoirg7nkp4dncpk3\&user=admin
+						\item Cookie - jest to nagłówek wysyłany podczas żądania wysyłającą ciasteczko
+						np. Cookie: sessionid=el4ukv0kqbvoirg7nkp4dncpk3\&user=admin
+					\end{itemize}
+				\end{itemize}
 			\newpage\subsection{\color{red}Protokół WebSocket.}
 				a
 			\newpage\subsection{\color{red}Serwer zdarzeniowy, a wielowątkowy. Charakterystyka i porównanie.}
