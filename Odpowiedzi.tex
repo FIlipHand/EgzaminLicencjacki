@@ -196,8 +196,37 @@
 					\item[Suma kontrolna nagłówka] – gdy odbiorca dostanie pakiet, sprawdza jego poprawność obliczając sumę kontrolną i porównując ją z sumą kontrolną zapisaną w nagłówku
 					\item[Adres źródłowy i adres docelowy ] – zawierają adresy IP urządzeń które przesyłają między sobie dane zapisane w formacie binarnym
 				\end{description}
-			\newpage\subsection{\color{green} Rafał \color{red}Ethernet.}
-				a
+			\newpage\subsection{Ethernet.}
+				\subparagraph{Ethernet} - jest to standard wykorzystywany (głównie) do budowy sieci lokalnych LAN
+				(należy pamiętać że Ethernet jest najpopularniejszy. Jest jeszcze np. Token Ring, FDDI)
+				Opisuje on sposób reprezentacji danych w postaci ramek, które są przesyłane przez
+				warstwę fizyczną (czyli przez kable sygnałami 0 i 1)
+				
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{ethernet.png}
+					\caption{Schemat sieci ethernet}
+				\end{figure}
+				
+				Klasyczne cechy charakteryzujące sieć Ethernet:
+				\begin{itemize}
+					\item parametry czasowe
+					\item format ramki
+					\item proces transmisji
+					\item podstawowe zasady podczas tworzenia sieci Ethernet
+				\end{itemize}
+			
+				Zalety Ethernet::
+				\begin{itemize}
+					\item łatwy w implementacji
+					\item niski koszt implementacji
+					\item niezawodność
+					\item zdolny do przyjmowania nowych technologii
+				\end{itemize}
+			
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{ramka-ethernet.png}
+					\caption{Ramka Ethernet}
+				\end{figure}
 			\newpage\subsection{\color{green} Rafał \color{red}Protokoły warstwy aplikacji.}
 				a
 			\newpage\subsection{Charakterystyka modelu OSI i TCP/IP.}
