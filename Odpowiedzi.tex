@@ -17,6 +17,8 @@
 \contourlength{1.4pt}
 \usepackage[margin=1in]{geometry}
 \usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
 
 
 \tikzset{>=latex} % for LaTeX arrow head
@@ -147,7 +149,35 @@
 					\caption{najman.jpg}
 				\end{figure}
 			\newpage\subsection{Porównanie protokołów IPv4 i IPv6.}
-				a
+				\begin{table}[h!]
+					\centering
+					\renewcommand*{\arraystretch}{2}
+					\resizebox{\textwidth}{!}{%
+						\begin{tabularx}{\linewidth}{>{\hsize=.5\hsize}X X X}
+							\toprule
+							& IPv4                             & IPv6                                                                   \\ \midrule
+							Adres                               & 32 bity (4 bajty)                & 128 bitów (16 bajtów)                                                  \\
+							Zapis adresu &
+							nnn.nnn.nnn.nnn , gdzie nnn reprezentuje oktet (bajt) i może być liczbą w systemie dziesiętnym &
+							xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxx x , gdzie x jest liczbą w systemie szesnastkowym \\
+							Bity poświęcone na sieć i na hosta  & A - 8:24, B - 16:16, C - 24:8    & 64:64                                                                  \\
+							Długość nagłówka                    & 20 bajtów                        & 40 bajtów                                                              \\
+							Pole "suma kontrolna"               & Jest (wymagany)                  & Brak (zamiast tego pola jest błąd)                                     \\
+							IPSec (w kontekście bezpieczeństwa) & Opcjonalne                       & Obowiązkowy                                                            \\
+							Identyfikacja przepływu danych &
+							Brak (czyli brak QoS {[}jakość usług{]}) &
+							Występuje, a wykryty przepływ jest przekazywany na router \\
+							Fragmentacja                        & Wykonywana przez hosta i routery & Wykonywana przez hosty                                                 \\
+							Konfiguracja adresów                & Manualna lub DHCP                & SLAACK wykorzystujący ICMPv6 lub DHCPv6                                \\
+							Uzyskiwanie MAC z IP &
+							Zapytanie ARP na Broadcast &
+							Wysyłanie zapytania Multicast Neighbor Solicitation (to taki rodzaj zapytania multicast do sąsiadów) \\
+							Broadcast                           & Tak                              & Nie (występuje tutaj adres “link-local” który może zastąpić broadcast) \\
+							Multicast                           & Tak                              & Tak                                                                    \\ \bottomrule
+						\end{tabularx}%
+					}
+					\label{tab:my-table}
+				\end{table}
 			\newpage\subsection{Format pakietu IP (poszczególne pola, zastosowanie).}
 				\begin{figure}[h!]
 					\centering\includegraphics[scale=0.65]{ip-datagram.jpg}
