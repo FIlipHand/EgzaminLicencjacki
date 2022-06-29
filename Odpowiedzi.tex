@@ -968,18 +968,286 @@
 	\chapter{Pytania - reszta}
 	
 		\section{Jezyk C i C++}
-			\subsection{\color{green} Kacper S \color{red}Instrukcje sterujące w języku C.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Zarządzanie pamięcią w języku C.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Budowa, obsługa i formatowanie łańcuchów znakowych w języku C.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Zasięg i czas życia obiektów w języku C++.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Obsługa wyjątków w języku C++.}
-				a
-			\newpage\subsection{\color{green} Kacper S \color{red}Definicje obiektu, klasy i szablonu klasy w języku C++.}
-				a
+			\subsection{Instrukcje sterujące w języku C.}
+				\subparagraph{Instrukcja sterująca}jest to każda instrukcja, która może zmienić kolejność wykonywania linii w programie (np.  \verb*|if| czy  \verb*|for|). Dzięki nim program nie jest odczytywany jak tekst od góry do dołu, a może zawierać rozgałęzienia, powtórzenia operacji lub przedwczesne zakończenie.\\
+				
+				\begin{itemize}
+					\item \verb*|IF| - instrukcja warunkowa
+					\begin{lstlisting}[language=C]
+int a = 4;  
+int b = 6;
+
+if (a==b) { 
+    printf ("a == b\n"); 
+} else { 
+    printf ("a != b\n"); 
+} 
+					\end{lstlisting}
+					\item \verb*|SWITCH| - instrukcja warunkowa (warto zwrócić uwagę, że bez \verb*|BREAK|, program będzie sprawdzał kolejne warunki \verb*|CASE|, co może być niepożądanym zachowaniem)
+					\begin{lstlisting}[language=C]
+unsigned int dzieci = 3, podatek=1000; 
+switch (dzieci) { 
+    case 0: break; /* brak dzieci - czyli brak ulgi */ 
+    case 1: /* ulga 2% */ 
+    podatek = podatek - (podatek/100 * 2); 
+        break; 
+    case 2: /* ulga 5% */ 
+        podatek = podatek - (podatek/100 * 5); 
+        break; 
+    default: /* ulga 10% */ 
+        podatek = podatek - (podatek/100 * 10); 
+        break; 
+} 
+					\end{lstlisting}
+					\item \verb*|FOR| - instrukcja petli
+					\begin{lstlisting}[language=C]
+for (int a=1; a<=10; ++a) { 
+    printf ("%d\n", a*a); 
+}
+					\end{lstlisting}
+					\item \verb*|WHILE| - instrukcja petli
+					\begin{lstlisting}[language=C]
+while (a <= 10) {
+    printf ("%d\n", a*a);
+    ++a;
+} 
+					\end{lstlisting}
+					\item \verb*|DO WHILE| - instrukcja pętli, różni się tym od while że pierwsze wykonanie jest bezwarunkowe, dzięki temu kod pętli wykona się co najmniej jeden raz
+					\begin{lstlisting}[language=C]
+do { 
+    printf ("%d\n", a*a*a); 
+    ++a; 
+} while (a <= 10);
+					\end{lstlisting}
+				\item \verb*|BREAK| - przerywa wykonanie pętli, w której się znajduje. W przypadku zagnieżdżonych pętli, przerwana jest tylko "najniższa" petla w hierarchii
+				\begin{lstlisting}[language=C]
+for (int i = 0; ;++i) { /* pomimo braku warunku zakonczenia
+                           BREAK zapewnia, 
+                           ze petla jest skonczona */
+    if (i == 5) break; 
+} 
+				\end{lstlisting}
+			\item \verb*|CONTINUE| - przechodzi do kolejnej iteracji pętli pomijając pozostałe instrukcje dla bieżącej iteracji
+			\begin{lstlisting}[language=C]
+for (i = 1 ; i <= 50 ; ++i) { 
+    if (i%4==0) continue ; /* zapobiega wyswietlaniu liczbom
+                              podzielnym przez 4 */
+    printf ("%d, ", i); 
+} 
+			\end{lstlisting}
+		\item \verb*|EXIT| - zakańcza działanie programu zwracając kod błędu. Kod 0 oznacza poprawne wykonanie programu.
+		\begin{lstlisting}[language=C]
+exit(0);
+		\end{lstlisting}
+				\end{itemize}
+				
+			\newpage\subsection{Zarządzanie pamięcią w języku C.}
+				\subparagraph{Zarządzanie pamięcią} odbywa się za pomocą 3 możliwych operacji: alokacja, zmiana rozmiaru, wzolnienie pamięci. Ważne jest prawidłowe operowanie zwalnianiem pamięci, ponieważ błędy programistyczne na tej płaszczyźnie mogą doprowadzić do powstania zaalokowanych bloków pamięci, do których program nie ma już odwołania (wyciek pamięci). Wycieki pamięci powodują stałe ograniczenie zasobu pamięci na czas wykonywania programu, co może prowadzić do spowolnienia programu a nawet niepowodzenia w jego wykonaniu.\\
+				
+				Możwile operacje zarządzania pamięcią w języku C to:
+				\begin{itemize}
+					\item \verb*|malloc| - przydziela obszar pamięci o podanym rozmiarze i zwraca do niego “surowy” wskaźnik. Aby było wiadomo jaki typ danych znajduje się pod podanym adresem należy podać typ używany do konwersji (podawany w nawiasie przed formułą). Świeżo zajęta pamięć oczywiście zawiera “śmieci” - losowe wartości. \\Podajemy ilość bajtów jaką chcemy zająć.
+					\begin{lstlisting}[language=C]
+int* x = (int*) malloc(sizeof(int)); 
+int* tab = (int*) malloc(sizeof(int)*n);
+					\end{lstlisting}
+					\item \verb*|calloc| - robi to samo co malloc, ale uzupełnia każdy zaalokowany adres wartością 0. Przydatne jeżeli potrzebujemy tablicy z zerami, albo wstaźnika na pojedynczą zmienną 0. \\Podajemy następująco: ilość elementów, wielkość każdego elementu w bajtach.
+					\begin{lstlisting}[language=C]
+int* tab = (int*) calloc(10,sizeof(int));
+					\end{lstlisting}
+					\item \verb*|realloc| - zmienia rozmiar wcześniej zaalokowanej pamięci. Nowo zaalokowana pamięć będzie miała najprawdopodobniej inny adres od pierwowzoru - będzie kopią (zależy od kompilatora).\\Podajemy następująco: wskaźnik i nowy rozmiar.
+					\begin{lstlisting}[language=C]
+int* tab = (int*) realloc(tab,sizeof(int)*n); 
+					\end{lstlisting}
+					\item \verb*|free| - służy do zwalniania dynamicznie zaalokowanej pamięci. Uwaga! Zwalnianie pamięci nie jest rekurencyjne, więc kolejność zwalniania ma znaczenie, aby nie doprowadzić do wycieków pamięci najpierw chcemy zwolnić elementy najniżej w hierarchii idąc w górę. Dla przykładu mając dynamicznie zaalokowaną klasę i jej atrybuty, chcemy zacząć od atrybutów i na końcu zwolnić pamięć jaką zajmuje element klasy.\\Podajemy wskaźnik na zmienną.
+					\begin{lstlisting}[language=C]
+free(tab);
+					\end{lstlisting}
+				\end{itemize}
+			\newpage\subsection{Budowa, obsługa i formatowanie łańcuchów znakowych w języku C.}
+				\subparagraph{Łańcuchy znaków}są to tablice zmiennych typu char, ostatni element tablicy to "\textbackslash0". Za ich pomocą reprezentowane są napisy. Napis 5-cio literowy musi być reprezentowany w co najmniej 6-cio elementowej tablicy (możliwa jest jego reprezentacja w dłuższej tablicy pod warunkiem zakończenia napisu symbolem - \textbackslash0).\\
+					
+				\begin{figure}[h!]
+					\centering\includegraphics[scale=0.45]{example_string_c.jpg}
+					\caption{Przykład reprezentacji napisu "Hello"}
+				\end{figure}
+			
+				\subsubsection{Budowa}
+
+					Przykłady deklaracji łańcucha znakowego:
+					\begin{itemize}
+						\item przykład 1:
+						\begin{lstlisting}[language=C]
+char string1[] = "A string declared as an array.\n";
+						\end{lstlisting}
+						\item przykład 2:
+						\begin{lstlisting}[language=C]
+char *string2 = "A string declared as a pointer.\n";	
+						\end{lstlisting}
+						\item przykład 3:
+						\begin{lstlisting}[language=C]
+char string3[30]; 
+strcpy(string3, "A string constant copied in.\n");
+						\end{lstlisting}
+					\end{itemize}
+					\newpage
+					Możliwe jest również dynamiczne zaalokowanie łańcucha, przykład:
+					\begin{lstlisting}[language=C]
+	char **tab = (char**)malloc(sizeof(char*) * 3); 
+	/* 3 lancuchy znakow */
+	for (int i=0; i<3; i++){ 
+	    tab[i] = (char*)malloc(sizeof(char) * 200);
+	    /* Po 200 bajtow na lancuch */
+	} 
+	strcpy(tab[0], "abcxyz"); 
+	strcpy(tab[1], "zzzzzyyyyxxx"); 
+	strcpy(tab[2], "ab123"); 
+	printf("%s %s %s\n", tab[0], tab[1], tab[2]); 
+					\end{lstlisting}
+			
+				\subsubsection{Obsługa łańcuchów}
+					Do odsługi łańcuchów możemy zaliczyć następujące komendy:
+					\begin{itemize}
+						\item \verb*|strcmp| - służy do porównywania łańcuchów znaków. Jego działanie jest lekko odwrotne niż możnaby się spodziewać, ponieważ zwrócona wartość 0 oznacza identyczność łańcuchów. Funkcja zwraca wartość >0 jeżeli pierwszy nieidentyczny znak jest większy (wartościowo po ASCII) w pierwszym napisie. Analogicznie zwrócona wartośc ujemna oznacza, że pierwszy różny znak był mniejszy wartościowo (po ASCII) w pierwszym napisie.
+						\begin{lstlisting}[language=C]
+if (strcmp(A, B) == 0){
+    /* lancuchy sa identyczne */
+}
+else if (strcmp(A, B) > 0){
+    /* lancuch A jest wiekszy w kolejnosci alfabetycznej */
+}
+else /* (strcmp(A, B) < 0) */{
+    /* lancuch A jest mniejszy w kolejnosci alfabetycznej */
+}
+						\end{lstlisting}
+					\end{itemize}
+				
+				\subsubsection{Formatowanie łańcuchów}
+					Istnieje możliwość sparametryzowania istaniejących łańcuchów, w celu tym wykorzystuje się wstawki typu \verb*|%.2f|, gdzie po nich podawana jest wartośc. Niektóre ze wstawek mogą być modyfikowane np. \verb*|%.2f| to tak naprawdę zmodyfikowana \verb*|%f|, liczba zmiennoprzecinkowa zostala ograniczona do 2 miejsc po przecinku.\\
+					
+					Możliwe wstawki to:
+					\begin{itemize}
+						\item \verb*|s| - wypisuje cały string (wypisuje całą tablicę typu char do symbolu końca linii)
+						\begin{lstlisting}[language=C]
+printf("Ciag znakow ASCII: %s", "jakis tekst"); 
+						\end{lstlisting}
+						\item \verb*|c| - int podany w argumencie zostanie zamieniony na znak ASCII
+						\begin{lstlisting}[language=C]
+printf("Znak ASCII o kodzie 65: %c", 65);
+						\end{lstlisting}
+						\item \verb*|d| - wypisuje liczbę w postaci dziesiętnej
+						\begin{lstlisting}[language=C]
+printf("Liczba dziesietna calkowita ze znakiem: %d", -65); 
+						\end{lstlisting}
+						\item \verb*|e| - liczba jest przedstawiana w postaci naukowej gdzie 0,45 to 4,5E-2
+						\begin{lstlisting}[language=C]
+printf("Liczba dziesietna w zapisie naukowym: %e", -165.1235); 
+						\end{lstlisting}
+						\item \verb*|f| - liczba (dziesiętna) jest przedstawiana w postaci zmiennoprzecinkowej
+						\begin{lstlisting}[language=C]
+printf("Liczba dziesietna zmiennoprzecinkowa: %f", -165.1235);
+						\end{lstlisting}
+						\item \verb*|o| -  liczba dziesiętna przedstawiona w systemie ósemkowym
+						\begin{lstlisting}[language=C]
+printf("Liczba osemkowa calkowita bez znaku: %o", 64); 
+						\end{lstlisting}
+						\item \verb*|u|- liczba (dodatnia, ujemna, zmiennoprzecinkowa) jest jako naturalna
+						\begin{lstlisting}[language=C]
+printf("Liczba dziesietna calkowita bez znaku: %u", 65);
+						\end{lstlisting}
+						\item \verb*|x| - liczba dziesiętna przedstawiona w systemie szesnastkowym
+						\begin{lstlisting}[language=C]
+printf("Liczba szesnastkowa bez znaku: %x", 346874); 
+						\end{lstlisting}
+					\end{itemize}
+					
+				
+				
+			\newpage\subsection{Zasięg i czas życia obiektów w języku C++.}
+				\subparagraph{Zacięg i czas życia}to elementy charakteryzujące okres życia każdaj zmiennej. Zasięg opisuje w jakim obrębie programu umożliwiony jest dostęp do zmiennej. Czas życia rozpoczyna się w miejscu alokacji zmiennej i trwa aż do momentu jest jawnego lub (częściej) niejawnego zdealokowania. W przypadku zmiennych zaalokowanych niedynamicznie ich zycie dopiega końca gdy program nie ma już dostępu do ich zasięgu.\\
+				
+				Zniemme zaalokowane w sposób dynamiczny (wskaźniki) muszą zostać manualnie zwolnione za pomocą \verb*|free| (C i C++) lub \verb*|del| (C++).\\
+				
+				Zasięg zmiennej można podzielić na:
+				\begin{enumerate}
+					\item \textbf{Zasięg głobalny} - (inaczej mówiąc dla całego programu) to zasięg zmiennej lub obiektu w całym pliku. Najczęściej gdy programy są pisane w postaci skryptu jako 1 plik w którym to takie zmienne są inicjalizowane na czas całego programu.
+					\item \textbf{Zasięg lokalny} - zakres zainicjalizowanych zmiennych bądź obiektów w bloku ogranicza się do tego bloku. Dotyczy to zwykłych bloków ( \{ \} ), pętli oraz warunków.
+					\item \textbf{Zasięg w ciele funkcji} - czas życia zmiennych oraz obiektów ogranicza się do czasu wykonywania funkcji. Poza nią zmienne są niedostępne, a po jej zakończeniu zwalniane.
+				\end{enumerate}
+			\newpage\subsection{Obsługa wyjątków w języku C++.}
+				\subparagraph{Obsługa wyjątków}to nic innego jak typowa struktura "try - catch". Struktura ta zamyka wybrany zakres kodu w bloku \verb*|TRY|. W przypadku niepowodzenia wykonania bloku try wykonywany jest kod z bloku \verb*|CATCH|. Zazwyczaj w bloku \verb*|CATCH| następuje wyświetlenie błędu, wykonanie alternatywnej operacji do tej w bloku \verb*|TRY| lub zakończenie programu.\\
+				
+				Po bloku \verb*|TRY| może występować wiele bloków \verb*|CATCH| z różnymi warunkami, warunki są sprawdzane po kolei i w wypadku natrafienia na pasujący wyjątek, wykonywany jest kod z tego bloku \verb*|CATCH|.\\
+				\begin{lstlisting}[language=C]
+try{  // boimy sie niepowodzenia operacji fun() i fun2()
+    fun(); 
+    fun2(); //podejrzane funkcje 
+} 
+catch(std::string obj) 
+{ 
+    /* tutaj mozemy wyswietlic blad
+     lub wywolac alternatywne operacje */
+}
+				\end{lstlisting}
+				
+				Wyjątki mogą byś samodzielnie wywołane używając instrukcji \verb*|throw|.
+				\begin{lstlisting}[language=C]
+try 
+{ 
+    throw 123; 
+} 
+catch(int w) 
+{ 
+    cout << w << endl; /* wypisze: 123 */
+} 
+
+				\end{lstlisting}
+			
+			\newpage\subsection{Definicje obiektu, klasy i szablonu klasy w języku C++.}
+				\subparagraph{Obiekt}to pojedyncza instancja konkretnej klasy. Każdy obiekt może posiadać atrybuty z unikalnymi wartościami np. (waga=59; wiek=24; kolor=różowy).\\
+				
+				\subparagraph{Klasa}to szablon (przepis) na podstawie którego powstają obekty. Klasa może posiadać atrybuty (zmienne) oraz metody (funkcje) różnego typu dostępu. Możliwe są typy:
+				\begin{itemize}
+					\item \verb*|PRYWATNY (private)| - brak bezpośredniego dostępu poza danym obiektem
+					\item \verb*|CHRONIONY (protected)| - jak private lecz dostęp do elementów klasy jest możliwy dodatkowo z klas dziedziczących po tej klasie.
+					\item \verb*|PUBLICZNY (public)| - nieograniczony dostęp, jeżeli mamy dostęp do obiektu to i do jego wszystkich elementów typu public.
+				\end{itemize}
+			
+				Wśród klas można dodatkowo wyodręblić metody wirtualne deklarowane za pomocą instrukcji \verb*|virtual|, np.
+				\begin{lstlisting}[language=C]
+	virtual void a() = 0;
+				\end{lstlisting}
+				Metody wirtualne nie posiadają ciała.\\
+				
+				Klasy zawierające co najmniej 1 metodę wirtualną to klasy abstrakcyjne, nie można tworzyć za ich pomocą obiektów i służą jedynie do dziedziczenia.\\
+				
+				Specjalną klasą abstrakcyjną jest interfejs - klasa zawierająca \textbf{jedynie} metody wirtualne.
+				
+				
+				\subparagraph{Szablon klasy}to pewnego rodzaju wzorzec do tworzenia klas. Szczególnie użyteczny w przypadku gdy planowane klasy różnią się jedynie typem atrybutów. Stosowanie szablonów pozwala zminimalizować powtarzalność kodu.\\
+				
+				Deklaracja szablonu:
+				\begin{lstlisting}[language=C]
+	template <typename T>
+				\end{lstlisting}
+			
+				Przykład szablonu klasy:
+				\begin{lstlisting}[language=C]
+	class Punkt 
+	{ 
+	    public: 
+	    Punkt( T argX, T argY, T argZ ) 
+	    : x(argX), y(argY), z(argX) 
+	    { } 
+	    T x, y, z; 
+	};
+				\end{lstlisting}
+			
+				Wykorzystanie szablonu podczas tworzenia obiektu klasy: 
+				\begin{lstlisting}[language=C]
+	Punkt<int> A(0, -10, 0); 
+	Punkt<float> A(0.4, 10.5, 5.1);
+				\end{lstlisting}
 		
 		\newpage\section{Algosy}
 			\subsection{\color{red}Algorytmy sortujące.}
